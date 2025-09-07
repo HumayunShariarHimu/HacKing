@@ -1,0 +1,209 @@
+Brute Force Attack করার কৌশল ও টেকনিক (শিক্ষনীয় ও এথিক্যাল উদ্দেশ্যে):
+
+
+---
+
+1. টার্গেট সনাক্তকরণ (Target Enumeration):
+
+কোথায় অ্যাটাক করব?
+প্রথমে বুঝতে হবে যে কোথায় brute force attack চালানো হবে:
+
+ওয়েবসাইটের লগইন ফর্ম
+
+SSH / FTP / SMTP সার্ভার
+
+WordPress login panel
+
+Wi-Fi router
+
+API endpoint
+
+
+টুলস:
+
+nmap দিয়ে পোর্ট স্ক্যান করে সার্ভিস খোঁজা
+
+whatweb, wappalyzer দিয়ে ওয়েব অ্যাপ্লিকেশন ডিটেক্ট
+
+
+
+---
+
+2. ইউজারনেম ও পাসওয়ার্ড সংগ্রহ:
+
+Dictionary Wordlists:
+ব্যবহার করা হয় rockyou.txt, darkc0de.txt ইত্যাদি
+
+Custom Lists:
+টার্গেটের সোশ্যাল মিডিয়া, ইমেইল, নাম, জন্মদিন থেকে অনুমানযোগ্য তথ্য সংগ্রহ করে তালিকা তৈরি
+
+
+টুলস:
+
+Cewl – ওয়েবসাইট থেকে কাস্টম ডিকশনারি তৈরি
+
+Crunch – কাস্টমাইজড পাসওয়ার্ড জেনারেটর
+
+
+
+---
+
+3. অ্যাটাক পরিচালনা (Actual Brute Force Attack):
+
+A. ওয়েব লগইন ফর্মে:
+
+Hydra, Burp Suite, বা WFuzz ব্যবহার করে POST request brute force করা হয়
+
+
+Hydra উদাহরণ (HTTP ফর্ম):
+
+hydra -L users.txt -P pass.txt target.com http-post-form "/login:username=^USER^&password=^PASS^:Invalid login"
+
+B. SSH সার্ভারে:
+
+hydra -L users.txt -P pass.txt ssh://192.168.0.1
+
+C. WordPress Login:
+
+wpscan, wpsploit অথবা Hydra দিয়ে অ্যাটাক চালানো হয়
+
+
+D. Wi-Fi পাসওয়ার্ড ব্রেক (Handshakes):
+
+aircrack-ng + wordlist
+
+wifite, fluxion, Reaver ইত্যাদি ব্যবহার
+
+
+
+---
+
+4. রেসপন্স বিশ্লেষণ (Response Analysis):
+
+সঠিক পাসওয়ার্ড মিলে গেলে সার্ভার সাধারণত redirect করে বা successful login মেসেজ দেয়।
+
+Burp Suite বা Hydra আউটপুট থেকে সঠিক credentials শনাক্ত করা যায়।
+
+
+
+---
+
+5. উন্নত কৌশল (Advanced Techniques):
+
+Tor Network / Proxy Rotation – IP block এড়াতে
+
+Captcha Bypass / OCR tools – ক্যাপচা থাকলে বাইপাস করা
+
+Delay / Throttle Bypass – সময় নির্ধারিত হলে bypass করা
+
+
+
+---
+
+6. এথিক্যাল উদ্দেশ্যে সিকিউরিটি প্র্যাকটিস:
+
+টুলসের ব্যবহার:
+
+DVWA (Damn Vulnerable Web Application)
+
+bWAPP, Metasploitable, HackTheBox labs
+
+নিজস্ব লোকালহোস্ট সার্ভারে টেস্ট করুন (আইনি অনুমতি ছাড়া কখনোই রিয়েল সাইটে না)
+
+
+
+---
+
+চলো তাহলে Linux এবং Windows–এই দুটোতেই Brute Force Attack প্র্যাকটিস করার জন্য একটি সম্পূর্ণ এনভায়রনমেন্ট তৈরি করি....
+
+
+---
+
+1. Linux-এর জন্য Brute Force Lab Setup:
+
+A. প্রয়োজনীয় সফটওয়্যার ও টুলস:
+
+VirtualBox / VMware
+
+Kali Linux (Attacker Machine)
+
+DVWA / Metasploitable2 (Target Machine)
+
+Burp Suite (Request Analysis)
+
+Hydra / Medusa (Brute Force Tool)
+
+Crunch (Password Generator)
+
+Cewl (Wordlist Generator)
+
+
+B. প্র্যাকটিস প্ল্যাটফর্ম:
+
+DVWA: http://localhost/dvwa
+
+Metasploitable2: Default IP: 192.168.56.101 (NAT/Host-Only Network)
+
+
+C. কনফিগারেশন:
+
+1. Kali Linux এ hydra, burpsuite, crunch, cewl ইনস্টল থাকে।
+
+
+2. Apache + MySQL দিয়ে DVWA রান করাও।
+
+
+3. Firefox + FoxyProxy + Burp Suite দিয়ে Request Intercept করে brute force request তৈরি করো।
+
+
+
+
+---
+
+2. Windows-এর জন্য Brute Force Lab Setup:
+
+A. প্রয়োজনীয় সফটওয়্যার:
+
+XAMPP/WAMP (Apache + MySQL)
+
+DVWA (Damn Vulnerable Web App)
+
+OWASP ZAP বা Burp Suite Community Edition
+
+Kali Linux VM (Brute Force Tool চালানোর জন্য)
+
+Wordlists (e.g., rockyou.txt)
+
+
+B. ইনস্টলেশন স্টেপস:
+
+1. XAMPP ইনস্টল করে htdocs/ এ DVWA কপি করো।
+
+
+2. php.ini ও config.inc.php কনফিগার করো।
+
+
+3. phpMyAdmin দিয়ে dvwa ডেটাবেস তৈরি করো।
+
+
+4. ব্রাউজারে http://localhost/dvwa চালাও।
+
+
+
+C. Kali Linux VM থেকে Windows Target এ অ্যাটাক:
+
+Windows Host এর IP দেখে Kali থেকে HTTP brute force চালানো যায়:
+
+
+hydra -L users.txt -P pass.txt 192.168.X.X http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^:Login failed"
+
+
+---
+
+টিপস:
+
+VPN বা NAT Network ব্যবহার করলে IP ব্লক হওয়ার ঝুঁকি থাকে না।
+
+সব প্র্যাকটিস লোকাল এনভায়রনমেন্টে করো।
+
+robots.txt, error messages বা HTML comments দেখে credentials leak খোঁজো।

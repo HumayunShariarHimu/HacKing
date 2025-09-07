@@ -1,0 +1,282 @@
+CSRF (Cross-Site Request Forgery) টেস্টিং ও শেখার জন্য প্রয়োজনীয় অ্যান্ড্রয়েড টুলস, কম্পিউটার সফটওয়্যার, প্যাকেজ, এবং হার্ডওয়্যার এর তালিকা টেক্সট ফরম্যাটে দেওয়া হলো:
+
+
+✅ Android Tools (অ্যান্ড্রয়েড টুলস):
+
+1. Termux – Linux environment তৈরি করে টার্মিনাল থেকে টুল চালানো যায়।
+
+
+2. ZAnti (by Zimperium) – Network sniffing ও Man-in-the-Middle টুল, CSRF সহ অন্যান্য ভলনারেবিলিটি বিশ্লেষণ করা যায়।
+
+
+3. cSploit – Ethical hacking suite, ক্লায়েন্ট সাইড অ্যাটাক বিশ্লেষণে কাজ করে।
+
+
+4. Packet Capture – HTTPS সহ সকল নেটওয়ার্ক ট্রাফিক ক্যাপচার করে। Root ছাড়া চলে।
+
+
+5. HTTP Toolkit (ADB port বা রিমোটে) – Android অ্যাপের HTTP অনুরোধ এনালাইসিসে কার্যকর।
+
+---
+
+✅ Computer Software (কম্পিউটার সফটওয়্যার):
+
+1. Burp Suite – সবচেয়ে জনপ্রিয় ওয়েব অ্যাপ পেন-টেস্টিং টুল, CSRF exploit সিমুলেট করা যায়।
+
+
+2. OWASP ZAP – ফ্রি vulnerability scanner, CSRF flaws detect করতে পারে।
+
+
+3. Postman – API টেস্ট করার জন্য, ম্যানুয়ালি POST/GET রিকোয়েস্ট পাঠাতে কাজে লাগে।
+
+
+4. Wireshark – নেটওয়ার্ক ট্রাফিক মনিটর ও analyze করে। HTTP Request-Response দেখা যায়।
+
+
+5. DVWA, bWAPP, OWASP Juice Shop – CSRF ও অন্যান্য দুর্বলতা অনুশীলনের জন্য ওয়েব অ্যাপ্লিকেশন।
+
+
+
+
+---
+
+✅ Programming Packages (প্যাকেজ/লাইব্রেরি):
+
+1. Python requests + BeautifulSoup – HTML ফর্ম ও CSRF টোকেন scrape করার জন্য।
+
+
+2. Selenium – Automated browser interaction; ফর্ম সাবমিট টেস্ট করার জন্য ব্যবহার হয়।
+
+
+3. csrf-token-extractor (GitHub script) – ওয়েব ফর্ম থেকে hidden CSRF token বের করার জন্য।
+
+
+4. Flask-WTF / Django CSRF Middleware – Web framework-এ CSRF প্রটেকশন শিখতে কাজে আসে।
+
+
+
+
+---
+
+✅ Hardware (হার্ডওয়্যার):
+
+1. Rooted Android Phone – কিছু sniffing tool এবং custom DNS বা proxy সেটআপে প্রয়োজন হতে পারে।
+
+
+2. WiFi Adapter (Monitor Mode Supported) – WiFi প্যাকেট sniff বা MITM অ্যাটাকে ব্যবহৃত হয়।
+
+
+3. Raspberry Pi (with Kali Linux) – পোর্টেবল হ্যাকিং ল্যাব বা প্র্যাকটিস এনভায়রনমেন্ট তৈরি করতে।
+
+
+
+
+---
+
+✅ Practice Platforms (শেখার জন্য অনুশীলনী প্ল্যাটফর্ম):
+
+1. DVWA (Damn Vulnerable Web Application)
+
+
+2. bWAPP (Buggy Web Application)
+
+
+3. OWASP Juice Shop
+
+
+4. PortSwigger Web Security Academy – Burp Suite ব্যবহার করে Lab Solve করা শেখা যায়।
+
+
+5. TryHackMe / Hack The Box – Guided বা challenge-based learning environment।
+
+
+
+সম্পূর্ণ CSRF প্র্যাকটিস এনভায়রনমেন্ট সেটআপের টিউটোরিয়াল দেওয়া হলো প্লেইন টেক্সট ফরম্যাটে Windows ও Linux–দুই সিস্টেমেই কাজ করতে পারো।
+
+============================================================ CSRF PRACTICE ENVIRONMENT (WINDOWS & LINUX)
+
+======================= PART 1: দরকারি সফটওয়্যার
+
+XAMPP (Windows)
+
+LAMP Stack (Linux)
+
+Burp Suite (Community Edition)
+
+Firefox/Chrome (FoxyProxy অ্যাডঅনসহ)
+
+DVWA (Damn Vulnerable Web App)
+
+bWAPP (Buggy Web App)
+
+Python 3, pip
+
+Django / Flask (CSRF Protection শেখার জন্য)
+
+
+======================= PART 2: DVWA INSTALLATION
+
+===> Windows (XAMPP):
+
+1. XAMPP ডাউনলোড: https://www.apachefriends.org
+
+
+2. DVWA ডাউনলোড: https://github.com/digininja/DVWA
+
+
+3. DVWA ফোল্ডার কপি করো: C:\xampp\htdocs\dvwa
+
+
+4. config.inc.php.dist ফাইল কপি করে config.inc.php নাম দাও
+
+
+5. XAMPP চালিয়ে Apache & MySQL Start করো
+
+
+6. Browser: http://localhost/dvwa/setup.php
+
+
+7. “Create/Reset Database” চাপো
+
+
+8. Login: Username: admin | Password: password
+
+
+
+===> Linux (Ubuntu/Kali):
+
+1. sudo apt update
+
+
+2. sudo apt install apache2 mysql-server php php-mysqli git
+
+
+3. cd /var/www/html
+
+
+4. sudo git clone https://github.com/digininja/DVWA.git
+
+
+5. cd DVWA/config
+
+
+6. sudo cp config.inc.php.dist config.inc.php
+
+
+7. sudo nano config.inc.php (ডাটাবেইজ ইউজার/পাস ঠিক করো)
+
+
+8. sudo service apache2 restart
+
+
+9. Browser: http://localhost/DVWA/setup.php
+
+
+
+======================= PART 3: BURP SUITE SETUP
+
+1. Burp Suite চালাও
+
+
+2. Firefox → Settings → Network → Manual Proxy:
+
+HTTP Proxy: 127.0.0.1
+
+Port: 8080
+
+
+
+3. Burp → Proxy → Intercept → ON করে রাখো
+
+
+4. DVWA → CSRF page থেকে ফর্ম সাবমিট করলে Burp-এ Request ধরা পড়বে
+
+
+
+======================= PART 4: bWAPP INSTALLATION
+
+1. bWAPP ডাউনলোড: https://sourceforge.net/projects/bwapp/
+
+
+2. Windows: C:\xampp\htdocs\bWAPP এ কপি করো
+
+
+3. Linux: /var/www/html/bWAPP এ কপি করো
+
+
+4. http://localhost/bWAPP/install.php → Setup complete
+
+
+
+======================= PART 5: Django/Flask – CSRF Protection শেখা
+
+===> Django:
+
+1. pip install django
+
+
+2. django-admin startproject csrf_test
+
+
+3. views.py: from django.views.decorators.csrf import csrf_protect
+
+@csrf_protect def my_view(request): ...
+
+
+4. template.html:
+
+<form method="POST">
+    {% csrf_token %}
+    ...
+</form>
+
+===> Flask:
+
+1. pip install flask flask-wtf
+
+
+2. app.py:
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from flask import Flask, render_template
+
+app = Flask(name)
+app.secret_key = 'secret'
+
+class MyForm(FlaskForm):
+name = StringField('Name')
+submit = SubmitField('Submit')
+
+
+3. template.html:
+
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.name }}
+</form>
+
+======================= PART 6: PRACTICE IDEAS
+
+1. Burp দিয়ে CSRF form request ক্যাপচার করো
+
+
+2. Token বাদ দিয়ে request পাঠাও — সার্ভার রিজেক্ট করছে কি না দেখো
+
+
+3. Malicious HTML form বানিয়ে DVWA-এর vulnerable CSRF ফিচার এক্সপ্লয়েট করো
+
+
+4. Django/Flask এ কিভাবে CSRF প্রোটেকশন কাজ করে তা compare করো
+
+
+
+============================================================ EXTRA TIPS:
+
+Proxy দিয়ে traffic Burp-এ পাঠাও
+
+Firefox + FoxyProxy ইউজ করে সহজে Proxy নিয়ন্ত্রণ করো
+
+PortSwigger Web Security Academy-তে CSRF এর উপর Lab Solve করো
+
+TryHackMe বা HackTheBox এ CSRF challenge খুঁজে প্র্যাকটিস করো

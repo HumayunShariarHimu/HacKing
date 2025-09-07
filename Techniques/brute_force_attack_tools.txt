@@ -1,0 +1,108 @@
+Brute Force Attack (শুধুমাত্র শিক্ষামূলক ও এথিক্যাল হ্যাকিং প্র্যাকটিসের উদ্দেশ্যে) করার জন্য প্রয়োজনীয় Android টুলস, কম্পিউটার সফটওয়্যার, প্যাকেজ, এবং হার্ডওয়্যার নিচে দেওয়া হলো:
+
+
+---
+
+Android টুলস ও অ্যাপস:
+
+1. Termux
+
+Linux shell emulator যেটা দিয়ে অনেক Brute Force টুল ইনস্টল করা যায়।
+
+প্যাকেজ ইনস্টল:
+
+pkg install hydra
+pkg install python
+pip install wordlistgen
+
+
+2. AndroNix / UserLAnd
+
+Full Kali Linux বা Ubuntu environment রান করায় Android ডিভাইসে।
+
+
+3. DroidSheep (Wi-Fi session hijack tool)
+
+Wi-Fi নেটওয়ার্কে ব্রুট ফোর্স বা সেশন স্নিফিংয়ের জন্য।
+
+
+4. zANTI (by Zimperium)
+
+Android-এর জন্য একাধিক নেটওয়ার্ক পেন-টেস্টিং টুলস সহ Brute Force মডিউল।
+
+
+5. Nmap (Android Port)
+
+সার্ভার বা সার্ভিস স্ক্যান করে Brute Force Target শনাক্ত করার জন্য।
+
+
+
+---
+
+কম্পিউটার সফটওয়্যার (Linux/Windows):
+
+1. Hydra
+
+সবচেয়ে জনপ্রিয় ও দ্রুত Brute Force tool:
+
+hydra -L users.txt -P passwords.txt target.com ssh
+
+
+2. Burp Suite
+
+Web login brute force request বানানো, request interception, response check।
+
+
+3. Medusa
+
+Fast parallel brute force attack tool (SSH, HTTP, FTP ইত্যাদির জন্য)
+
+
+4. Ncrack
+
+SSH, RDP, VNC, Telnet brute force-এর জন্য।
+
+
+5. Crunch
+
+কাস্টম পাসওয়ার্ড লিস্ট জেনারেট করতে:
+
+crunch 4 6 abc123 -o custom.txt
+
+
+6. Cewl
+
+টার্গেট ওয়েবসাইট থেকে ওয়ার্ডলিস্ট তৈরি করে।
+
+
+7. THC Hydra GUI (xHydra)
+
+Hydra-এর GUI ভার্সন – সহজে ব্যবহারযোগ্য।
+
+
+
+---
+
+হার্ডওয়্যার:
+
+Brute Force এর জন্য আলাদা হার্ডওয়্যার না লাগলেও নিচের জিনিসগুলো helpful:
+
+High-Performance CPU/GPU – Fast cracking/guessing জন্য
+
+Wi-Fi Adapter (External) – Wi-Fi brute force বা monitoring এর জন্য (e.g., TP-Link TL-WN722N v1)
+
+Rooted Android Device – অনেক tool সঠিকভাবে রান করাতে root দরকার
+
+Laptop/Desktop with Kali Linux / Parrot OS
+
+
+
+---
+
+ওয়ার্ডলিস্ট সোর্স:
+
+/usr/share/wordlists/rockyou.txt (Kali Linux)
+
+https://github.com/danielmiessler/SecLists
+
+Custom-made via crunch or cewl

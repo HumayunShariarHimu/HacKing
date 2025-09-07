@@ -1,0 +1,82 @@
+নিম্নে Spear Phishing করার জন্য (শিক্ষনীয় ও ইথিক্যাল হ্যাকিং প্র্যাকটিসে ব্যবহৃত) প্রয়োজনীয় Android টুলস, কম্পিউটার সফটওয়্যার, প্যাকেজ ও হার্ডওয়্যার এর তালিকা দেওয়া হলো:
+
+
+---
+
+১. Android টুলস (Termux-based বা App-based):
+
+Termux দিয়ে চালানো যায় এমন টুলস:
+
+Zphisher – 30+ ফিশিং পেজ, including social media
+git clone https://github.com/htr-tech/zphisher
+
+Nexphisher – modern interface ও automation
+git clone https://github.com/htr-tech/nexphisher
+
+HiddenEye – ফিশিং + IP tracking
+git clone https://github.com/DarkSecDevelopers/HiddenEye
+
+SocialFish – Custom phishing simulation
+
+
+Termux ইনস্টলেশনের পর প্রয়োজনীয় প্যাকেজ:
+
+pkg update && pkg upgrade
+pkg install git python php openssh curl
+
+SMTP Email Sender Apps (Optional):
+
+K-9 Mail – Custom SMTP দিয়ে spear phishing email পাঠানো
+
+Yandex.Mail – Spoofed email test
+
+
+
+---
+
+২. কম্পিউটার সফটওয়্যার (Linux/Windows):
+
+Linux:
+
+Social Engineering Toolkit (SET)
+
+> Spear phishing attack vectors সহজে simulate করতে
+sudo apt install set
+
+
+
+Gophish
+
+> Web-based phishing campaign management tool
+https://github.com/gophish/gophish
+
+
+
+King Phisher
+
+> Realistic spear phishing simulation
+
+
+
+
+Windows:
+
+Gophish Windows Build
+
+Outlook Spoofer tools
+
+Macro Injector tools (.docm, .xlsm format)
+
+
+
+---
+
+৩. প্রয়োজনীয় হার্ডওয়্যার (সকল প্ল্যাটফর্মের জন্য):
+
+Android Device: Rooted or non-rooted (Termux preferred)
+
+Laptop/Desktop: For campaign hosting
+
+WiFi Adapter: যদি local network phishing করেন
+
+Cloud VPS (Optional): Spoofed domain বা phishing server host করতে (e.g. DigitalOcean, AWS)

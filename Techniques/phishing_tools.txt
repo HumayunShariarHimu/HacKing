@@ -1,0 +1,122 @@
+ফিশিং শেখার জন্য লার্নিং এনভায়রনমেন্ট (Linux + Windows)
+
+Linux OS (Kali Linux বা Parrot OS) – ভেতরে থাকবে:
+
+Setoolkit (Social Engineering Toolkit) – ফিশিং পেজ তৈরি করতে
+
+Gophish – প্রফেশনাল ফিশিং সিমুলেশন প্ল্যাটফর্ম
+
+Evilginx2 – Advanced phishing via man-in-the-middle
+
+Apache/nginx servers – কাস্টম হোস্টিং পেজ তৈরির জন্য
+
+Wireshark & Burp Suite – Network sniffing ও request tracking
+
+
+Windows (for testing purposes):
+
+Windows 10 বা 11 (virtual machine এ)
+
+Browser এবং Outlook/Thunderbird – ইমেইল ফিশিং সিমুলেশনের জন্য
+
+
+Tools ও Resources:
+
+VirtualBox বা VMware – Virtual Environment তৈরি করতে
+
+DVWA, OWASP Juice Shop – ভিকটিম অ্যাপ্লিকেশন
+
+Custom HTML/CSS phishing templates – ফেক পেজ তৈরির জন্য
+
+Python, PHP scripts – data capture করতে
+
+MailCatcher / SMTP Server – fake email প্রেরণের জন্য
+
+
+
+---
+
+Android-এ Ethical Hacking/Phishing শেখার জন্য দরকারি জিনিস:
+
+1. Termux
+
+Android এর জন্য Linux terminal emulator
+
+কমান্ড:
+pkg update && pkg upgrade
+pkg install git
+pkg install python
+pkg install php
+
+
+
+2. Zphisher
+
+সহজ ফিশিং টুল (Termux দিয়ে চলে)
+
+ইনস্টল করতে:
+git clone https://github.com/htr-tech/zphisher
+cd zphisher
+bash zphisher.sh
+
+
+
+3. SocialFish
+
+Python ভিত্তিক phishing toolkit
+
+Python 3 ইনস্টল করে চালাতে হয়
+
+
+
+4. AndroNix
+
+Android এ Kali Linux, Ubuntu, Debian চালাতে দেয়
+
+GUI চালাতে VNC Viewer লাগে
+
+
+
+5. Kali NetHunter
+
+Kali Linux এর Android edition
+
+Rooted ফোনে সবচেয়ে ভালো চলে
+
+অনেক hacking টুলস প্রি-ইনস্টল থাকে
+
+
+
+6. NetHunter Store
+
+Kali NetHunter টুল ইনস্টল করার জন্য app store
+
+যেমন: Nmap, Metasploit, Hydra
+
+
+
+
+
+---
+
+Network Hacking Tools (Termux বা Linux-এ):
+
+Nmap (নেটওয়ার্ক স্ক্যানিং)
+
+Wireshark (প্যাকেট স্নিফিং, Linux এর মাধ্যমে)
+
+dnschef, ettercap (DNS spoofing)
+
+
+
+---
+
+আবশ্যক Hardware (উচ্চ পর্যায়ের শেখার জন্য):
+
+Android ফোন (3GB+ RAM হলে ভালো)
+
+OTG কেবল
+
+External Wi-Fi Adapter (প্যাকেট ইনজেকশনের জন্য)
+
+Rooted ফোন হলে বাড়তি সুবিধা পাওয়া যায়

@@ -1,0 +1,88 @@
+1. Linux (Kali Linux বা Ubuntu)
+
+টুলস:
+
+SEToolkit (Social Engineering Toolkit)
+sudo apt install set
+
+> ইমেইল ক্লোন, credential harvesting ও spear phishing simulation সহজে করতে সাহায্য করে।
+
+
+
+Gophish
+https://github.com/gophish/gophish
+
+> Advance phishing campaign management tool (GUI-based)
+
+
+
+
+কৌশল:
+
+Real-looking ইমেইল তৈরি করুন (ex: HR, Bank, Gmail support)
+
+SET -> Social-Engineering Attacks -> Spear-Phishing Attack Vectors
+
+Target এর তথ্য দিয়ে টেমপ্লেট তৈরি করুন
+
+Custom domain বা URL shortener ব্যবহার করতে পারেন (শিক্ষার জন্য)
+
+
+
+---
+
+2. Windows
+
+টুলস:
+
+Gophish (Windows build available)
+
+King Phisher
+
+Evilginx2 (WSL required)
+
+Outlook spoofed email tools (manual spoofing with SMTP)
+
+
+কৌশল:
+
+PowerShell দিয়ে ফেক mail পাঠানো
+
+Outlook spoofed email
+
+.docm / .xlsm ফাইল দিয়ে macro malware simulation (educational use only)
+
+
+
+---
+
+3. Android
+
+টুলস (Termux-based বা App-based):
+
+Termux + git + php
+
+SET বা Phishing Scripts (GitHub থেকে clone করে চালানো)
+
+Shellphish / Zphisher / Nexphisher
+
+Custom Email Sender Apps (Like K-9 mail with custom SMTP)
+
+
+প্রয়োজনীয় প্যাকেজ:
+
+pkg update && pkg upgrade
+pkg install git python php openssh
+git clone https://github.com/htr-tech/zphisher
+cd zphisher && bash zphisher.sh
+
+
+---
+
+হার্ডওয়্যার (সকল প্ল্যাটফর্মের জন্য):
+
+যেকোনো নেটওয়ার্কে Spoofed Email পাঠানোর জন্য VPS/Cloud Server (ex: AWS, DigitalOcean)
+
+Custom SMTP Server (ex: mailgun, sendgrid – educational free tier)
+
+Network access বা WiFi-adapter যদি local phishing বা clone-host করতে চান।

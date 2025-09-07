@@ -1,0 +1,94 @@
+Ransomware কাজের সাধারণ ধাপগুলো:
+
+Step 1: Delivery / Infection
+
+Social engineering (e.g. phishing email, malicious attachment)
+
+Drive-by download (exploit in browser)
+
+USB device
+
+RDP brute-force attack
+
+
+Step 2: Execution
+
+User একবার ফাইল খুললে বা ক্লিক করলেই malicious script (EXE, JS, Macro) চালু হয়।
+
+Script নিজেকে সিস্টেমে কপি করে startup এ বসে যায়।
+
+
+Step 3: Encryption
+
+Ransomware সিস্টেম স্ক্যান করে গুরুত্বপূর্ণ ফাইল খুঁজে নেয় (doc, pdf, xls ইত্যাদি)।
+
+তারপর Public-Key Cryptography ব্যবহার করে সেগুলো এনক্রিপ্ট করে।
+
+
+Step 4: Ransom Note
+
+ডেস্কটপে বা ফোল্ডারে একটি নোট রেখে যায় — যেখানে লেখা থাকে কিভাবে টাকা দিতে হবে, এবং কিভাবে "decryption key" পাওয়া যাবে।
+
+
+
+---
+
+Ransomware বিশ্লেষণের জন্য Tools (Defensive Analysis):
+
+Static Analysis Tools:
+
+PEStudio
+
+BinText
+
+Strings
+
+Dependency Walker
+
+
+Dynamic Analysis Tools:
+
+Any.Run
+
+Cuckoo Sandbox
+
+Process Monitor
+
+Wireshark
+
+
+Reverse Engineering:
+
+Ghidra
+
+IDA Free
+
+x64dbg
+
+
+
+---
+
+Ransomware প্রতিরোধের কৌশল (Defensive Focus):
+
+Endpoint Protection (EDR solutions)
+
+Regular Backups (offline + encrypted)
+
+Email filtering
+
+Disable Macros
+
+User awareness training
+
+Network segmentation
+
+
+
+---
+
+প্র্যাকটিস ও সিমুলেশন ল্যাব (Safe Environment):
+
+Windows 10 VM (isolated) + Cuckoo Sandbox
+
+Use malware samples from TheZoo, AnyRun, or VirusShare (only for research in isolated environments)

@@ -1,0 +1,155 @@
+Dictionary Attack করার জন্য প্রয়োজনীয় টুলস, প্যাকেজ, কম্পিউটার সফটওয়ার, হার্ডওয়্যার ইত্যাদি:
+
+এনড্রোয়েড টুলস ও প্যাকেজ:
+
+1. Termux:
+
+Termux একটি powerful terminal emulator যা এনড্রোয়েডে Unix-like environment তৈরি করে। এর মাধ্যমে বিভিন্ন কমান্ড লাইনের টুলস যেমন Hydra, nmap, metasploit, netcat ইত্যাদি ইনস্টল করা যায়।
+
+Install:
+
+pkg install hydra
+
+
+
+2. Hydra (এনড্রোয়েডে ইনস্টল করতে হলে Termux ব্যবহার করতে হবে)
+
+জনপ্রিয় পাসওয়ার্ড ক্র্যাকিং টুল যা Dictionary Attack এর জন্য ব্যবহৃত হয়।
+
+Install:
+
+pkg install hydra
+
+
+
+3. Burp Suite (Web Application Testing)
+
+ওয়েব অ্যাপ্লিকেশন এবং API পরীক্ষা করার জন্য ব্যবহৃত একটি powerful tool। এটি Login Form-এর উপর Dictionary Attack চালাতে পারে।
+
+Install: Burp Suite-এর Android ভার্সন নেই, তবে Termux বা Kali Linux ব্যবহার করে Burp চালানো সম্ভব।
+
+
+
+4. DroidBox (Android Analysis)
+
+Android অ্যাপ্লিকেশন পরীক্ষার জন্য ব্যবহৃত একটি টুল যা ডিভাইসের অ্যাপ্লিকেশনগুলোর মধ্যে漏洞 খুঁজে বের করে এবং Dictionary Attack এর মতো আক্রমণ পরীক্ষার সুযোগ দেয়।
+
+
+
+
+
+---
+
+কম্পিউটার সফটওয়্যার:
+
+1. Hydra (Linux, Windows, macOS)
+
+জনপ্রিয় ব্রুট ফোর্স পাসওয়ার্ড ক্র্যাকিং টুল যা বিভিন্ন প্রটোকলের জন্য Dictionary Attack চালাতে সক্ষম।
+
+Install on Linux:
+
+sudo apt install hydra
+
+Install on Windows:
+উইন্ডোজে Cygwin বা Kali Linux VM ব্যবহার করতে হয়।
+
+
+
+2. John the Ripper
+
+পাসওয়ার্ড হ্যাশ ব্রুট ফোর্স করার জন্য ব্যবহৃত হয়, এটি Dictionary Attack এর জন্য সমর্থন করে।
+
+Install:
+
+sudo apt install john
+
+
+
+3. Medusa
+
+Medusa হল একটি উচ্চ-দক্ষতা সম্পন্ন ব্রুট ফোর্স অ্যাটাক টুল যা Dictionary Attack এর জন্য ব্যবহৃত হয়। এটি SSH, HTTP, FTP ইত্যাদি সার্ভিসের জন্য পাসওয়ার্ড ক্র্যাক করতে সাহায্য করে।
+
+Install:
+
+sudo apt install medusa
+
+
+
+4. Burp Suite (Web Application)
+
+Burp Suite-এ Intruder এবং Repeater ব্যবহার করে Dictionary Attack চালানো যায় ওয়েব ফর্মগুলোর জন্য।
+
+Install:
+Burp Suite Java ভিত্তিক, তাই Java Runtime Environment প্রয়োজন। Java দিয়ে ইনস্টল করা যায়।
+
+Burp Suite Download Link
+
+
+
+
+5. Wfuzz (Web Application)
+
+ওয়েব অ্যাপ্লিকেশনের ফর্মের উপর Dictionary Attack চালানোর জন্য ব্যবহৃত হয়।
+
+Install:
+
+sudo apt install wfuzz
+
+
+
+
+
+---
+
+হার্ডওয়্যার:
+
+1. কম্পিউটার বা ল্যাপটপ:
+
+Dictionary Attack চালানোর জন্য একটি স্ট্যান্ডার্ড পিসি বা ল্যাপটপের প্রয়োজন (যত বেশি র‌্যাম ও প্রসেসর, তত দ্রুত আক্রমণ হবে)।
+
+প্রেফারেবল: ৮GB RAM এবং ৪ কোর CPU।
+
+
+
+2. VPN বা Proxy:
+
+টার্গেট সার্ভারের IP ব্লক এড়াতে, VPN বা Proxy ব্যবহার করা হতে পারে।
+
+এটি সাহায্য করে আক্রমণের সময় আপনার আইপি হিডেন রাখতে।
+
+
+
+3. Cloud Services (যেমন AWS, DigitalOcean):
+
+ব্রুট ফোর্স অ্যাটাক চালানোর জন্য ক্লাউড ভিএম ব্যবহার করা যেতে পারে যাতে IP ব্লকিং বা ডিডিওএস থেকে বাঁচা যায়।
+
+ক্লাউড সিস্টেমে শক্তিশালী GPU বা CPU ব্যবহার করে আক্রমণ চালানো হয়।
+
+
+
+
+
+---
+
+অতিরিক্ত টিপস:
+
+Wordlist:
+
+শব্দ তালিকা তৈরি অথবা ডাউনলোড করতে পারো, যেমন rockyou.txt, darkc0de.lst, ইত্যাদি।
+শব্দ তালিকার জন্য Kali Linux-এর মধ্যে অন্তর্ভুক্ত থাকা Wordlist ব্যবহার করতে পারো: /usr/share/wordlists/
+
+
+Rate Limiting Avoidance:
+
+আক্রমণের গতি নিয়ন্ত্রণ করতে, আক্রমণ চালানোর সময় টাইম ডিলে ব্যবহার করো।
+
+যদি সার্ভারে CAPTCHA বা Rate Limiting থাকে, তাহলে আক্রমণ সফল হতে দেরি হবে।
+
+
+
+
+---
+
+সতর্কতা:
+এই টুলগুলি শুধুমাত্র আপনার নিজস্ব সিস্টেম বা অনুমতিপ্রাপ্ত টার্গেটের জন্য ব্যবহার করা উচিত। অন্যথায়, এটা আইনি অপরাধ হতে পারে।
+

