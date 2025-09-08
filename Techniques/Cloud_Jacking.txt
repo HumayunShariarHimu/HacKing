@@ -1,0 +1,148 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Cloud Jacking হলো ক্লাউড সার্ভিস বা অ্যাকাউন্টের ওপর অবৈধ প্রবেশাধিকার অর্জন করার আক্রমণ, যেখানে আক্রমণকারী ভিকটিমের ক্লাউড credentials চুরি করে বা সার্ভিস কন্ট্রোল গ্রহণ করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: SaaS, PaaS, IaaS accounts (যেমন: AWS, Google Cloud, Azure)
+
+Credential theft বা session hijacking প্রধান উদ্দেশ্য
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, সিকিউরিটি ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট ক্লাউড environment ও user accounts এর তথ্য সংগ্রহ
+
+
+2. Credential Harvesting – phishing বা lab-simulated credential capture
+
+
+3. Exploitation – lab environment এ session takeover, role escalation, token capture
+
+
+4. Persistence – lab-only simulation, API key logging
+
+
+5. Actions on Objectives – resource access, logging, traffic analysis
+
+
+
+টেকনিক:
+
+Credential phishing / harvesting
+
+API key exposure
+
+Misconfigured cloud permissions exploitation (lab simulation)
+
+Session hijacking / token capture simulation
+
+Social engineering to gain account access
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Cloud sandbox environment (AWS Free Tier / local OpenStack lab)
+
+Android Emulator (Android Studio / Genymotion)
+
+
+Cloud Jacking Simulation:
+
+Create lab cloud accounts or sandbox environments
+
+Deploy simulated phishing / token capture scenario
+
+Log session hijack attempts and API key access in lab VM
+
+Analyze lab cloud resource access patterns
+
+
+Data Collection & Analysis:
+
+Credential capture rate (lab-only)
+
+Session hijacking success metrics
+
+Statistical analysis: access attempts, token validity
+
+Visualization: login attempts, session timelines
+
+
+Ethical / Legal Considerations:
+
+All credentials and cloud accounts are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Burp Suite – web traffic & session testing
+
+AWS CLI / Google Cloud SDK / Azure CLI – lab interaction
+
+Wireshark – packet capture & analysis
+
+Metasploitable VM – lab environment testing
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion)
+
+Kali NetHunter – lab testing & mobile security simulation
+
+
+Software Packages:
+
+Python: requests, boto3 (AWS), google-api-python-client, azure-sdk – lab simulation
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & traffic analysis
+
+SQLite / DB tools – logging API keys, tokens
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / test devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP Cloud Security Guidelines
+
+NIST SP 800-144 (Guidelines on Cloud Security)
+
+MITRE ATT&CK T1078 – Valid Accounts / Cloud
+
+IEEE / ACM Digital Library – Cloud Jacking research papers
+
+

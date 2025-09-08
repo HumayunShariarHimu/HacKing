@@ -1,0 +1,157 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Evil Twin Attack হলো একটি নকল Wi-Fi হটস্পট তৈরি করে ভিকটিমকে সেই নকল হটস্পটে কানেক্ট করানোর আক্রমণ, যাতে নেটওয়ার্ক ট্রাফিক লগ করা যায় বা credential চুরি করা যায়।
+
+বৈশিষ্ট্য:
+
+নকল Wi-Fi হটস্পট তৈরি করা
+
+টার্গেটেড Wi-Fi SSID এর মতো দেখতে হটস্পট ব্যবহার
+
+উদ্দেশ্য: Credential theft, session hijacking, sensitive data exfiltration
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, পেন-টেস্টিং, ট্রেনিং
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট Wi-Fi SSID ও নেটওয়ার্ক তথ্য সংগ্রহ
+
+
+2. Evil Twin Setup – নকল হটস্পট তৈরি ও SSID spoofing
+
+
+3. Deauthentication – ভিকটিমকে আসল হটস্পট থেকে ডিসকানেক্ট করা (ল্যাবে সিমুলেশন)
+
+
+4. Victim Connection – ভিকটিম নকল হটস্পটে কানেক্ট হয়
+
+
+5. Data Capture – লগিং, credential collection (lab-only)
+
+
+6. Analysis – ডেটা এনালাইসিস, traffic inspection
+
+
+
+টেকনিক:
+
+SSID spoofing / cloning
+
+Deauthentication attack (সিমুলেটেড)
+
+Captive portal phishing page creation
+
+Packet sniffing / logging
+
+ARP spoofing (lab simulation)
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Parrot OS VM
+
+Android Emulator (Android Studio / Genymotion)
+
+Isolated Wi-Fi network / test AP
+
+
+Evil Twin Simulation:
+
+Create cloned SSID with Wi-Fi adapter in monitor mode
+
+Setup captive portal page for credential collection
+
+Simulate deauthentication frames to lab VM (no real attack on external users)
+
+Packet logging & analysis with Wireshark
+
+
+Data Collection & Analysis:
+
+Capture connected device info (simulated lab devices)
+
+Analyze network packets for authentication attempts
+
+Statistical analysis: connection rate, login attempts, packet types
+
+Visualization: session timeline, traffic heatmaps
+
+
+Ethical / Legal Considerations:
+
+Only isolated lab environment
+
+No real users targeted
+
+Licensed/open-source tools
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Aircrack-ng suite – monitor mode, packet capture, deauth simulation
+
+Hostapd – create rogue AP
+
+Wireshark – packet capture & analysis
+
+Metasploitable VM – lab testing
+
+Bettercap – network sniffing & MITM simulation
+
+
+Android / Mobile Tools:
+
+Kali NetHunter – Wi-Fi pen-testing & lab simulation
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion) – lab device simulation
+
+
+Software Packages:
+
+Python: scapy, requests, flask (captive portal simulation)
+
+Nmap – network scanning
+
+Wireshark – packet capture & analysis
+
+SQLite / DB tools – logging captured data
+
+
+Hardware / Lab Setup:
+
+Wi-Fi adapter with monitor mode support
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / test devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP Wireless Security Guidelines
+
+NIST SP 800-115 (Technical Guide to InfoSec Testing)
+
+MITRE ATT&CK T1557 – Adversary-in-the-Middle (Evil Twin)
+
+IEEE / ACM Digital Library – Evil Twin Attack research papers
+
+

@@ -1,0 +1,157 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Spear Phishing হলো টার্গেটেড সোশ্যাল ইঞ্জিনিয়ারিং আক্রমণ, যেখানে নির্দিষ্ট ব্যক্তি বা প্রতিষ্ঠানের উদ্দেশ্যে কাস্টমাইজড বার্তা বা ইমেইল তৈরি করা হয়।
+
+বৈশিষ্ট্য:
+
+টার্গেটেড এবং পারসোনালাইজড বার্তা
+
+ডেলিভারি চ্যানেল: ইমেইল, মেসেজিং অ্যাপ, সোশ্যাল মিডিয়া
+
+উদ্দেশ্য: Credential theft, ডেটা এক্সফিলট্রেশন, ফান্ড ট্রান্সফার
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, সিকিউরিটি ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট সম্পর্কিত তথ্য সংগ্রহ (OSINT, সোশ্যাল মিডিয়া, পাবলিক রেকর্ড)
+
+
+2. Weaponization – ল্যাব টেস্টিং জন্য ফিশিং টেমপ্লেট বা সিমুলেটেড লিঙ্ক তৈরি
+
+
+3. Delivery – ইমেইল/বার্তা প্রেরণ (ল্যাবে)
+
+
+4. Exploitation – ল্যাব টেস্টিং, ইউজার ইন্টারঅ্যাকশন ট্র্যাক করা
+
+
+5. Installation – ব্যাকডোর বা ম্যালওয়্যার এমুলেশন (সিমুলেটেড)
+
+
+6. Command & Control – ল্যাব সার্ভারের মাধ্যমে সিমুলেশন
+
+
+7. Actions on Objectives – ডেটা লগ বিশ্লেষণ, ক্লিক রেট, রেসপন্স ট্র্যাকিং
+
+
+
+টেকনিক:
+
+Spoofed sender address (ল্যাব এমুলেশন)
+
+Look-alike domains (শুধুমাত্র সিমুলেশন)
+
+Personalization based on OSINT
+
+Attachment বা link embedding (ল্যাব টেস্টিং)
+
+Business Email Compromise (সিমুলেশন)
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware / Proxmox – isolated VM environment
+
+Kali Linux / Ubuntu VM
+
+Android Emulator (Android Studio / Genymotion)
+
+Separate lab network / VLAN isolation
+
+
+Phishing Campaign Simulation:
+
+Gophish / King Phisher ইনস্টলেশন
+
+ল্যাব ইমেইল সার্ভার বা SMTP configuration
+
+টার্গেট ইমেইল টেমপ্লেট তৈরি
+
+ইউজার ইন্টারঅ্যাকশন লগিং (open rate, click rate, response tracking)
+
+
+Data Collection & Analysis:
+
+Email open rate, click-through rate, user responses
+
+Statistical metrics: precision, recall, F1-score, ROC-AUC
+
+Visualization: time-based click trends, interaction heatmaps
+
+
+Ethical / Legal Considerations:
+
+Target data সম্পূর্ণ সিমুলেটেড
+
+লাইসেন্সকৃত ওপেন-সোর্স টুলস ব্যবহার
+
+ইন্টারনেট isolation / sandboxing
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Gophish – Open-source phishing framework
+
+King Phisher – Targeted campaign simulation
+
+SET (Social Engineering Toolkit – simulation only)
+
+Metasploitable VM – Lab testing environment
+
+PhishTank – Phishing URL database (research use)
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Kali NetHunter – Mobile security lab
+
+AndroRAT – Research / simulation only
+
+
+Software Packages:
+
+Python: requests, smtplib, scapy, flask
+
+Nmap – network analysis
+
+Wireshark – packet capture
+
+Sqlmap – DB simulation (lab only)
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator (Android Studio / Genymotion)
+
+Optional: Router / Switch testbed for isolated network
+
+
+References / Research Sources:
+
+OWASP Phishing Initiative
+
+NIST SP 800-115 (Technical Guide to Information Security Testing)
+
+MITRE ATT&CK T1566.001 / T1566.002
+
+IEEE / ACM Digital Library – Spear Phishing research papers
+
+
+

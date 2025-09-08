@@ -1,0 +1,145 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Whaling Attack হলো একটি স্পেশালাইজড phishing আক্রমণ যা উচ্চপদস্থ কর্মকর্তা (executives, CEOs, CFOs) বা decision-makers-কে টার্গেট করে। মূল লক্ষ্য হলো sensitive corporate data, financial credentials বা confidential information চুরি করা।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Executives, board members, high-profile employees
+
+দুর্বলতা: Human trust, urgency response, lack of verification
+
+উদ্দেশ্য: Lab-only phishing research, executive security awareness
+
+গবেষণার জন্য ব্যবহার: Corporate cybersecurity awareness, social engineering studies
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target executive ও তাদের যোগাযোগ পদ্ধতি চিহ্নিত করা
+
+
+2. Crafting a Targeted Email/Message – Lab-safe urgent, credible-looking message তৈরি করা
+
+
+3. Delivery – Lab-only email or messaging channel ব্যবহার করে পাঠানো
+
+
+4. Engagement – Target (lab simulation) click বা response দেওয়ার জন্য প্রলুব্ধ করা
+
+
+5. Data Collection – Lab-safe credential, document, or info capture
+
+
+6. Analysis – Interaction patterns ও exploit effectiveness logging
+
+
+
+টেকনিক:
+
+Spear phishing specifically tailored to executive interests
+
+Lab-only urgent financial requests or document links
+
+Social engineering messages appearing as CEO/Manager communications
+
+Behavioral logging in lab environment
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual lab environment with simulated executive accounts
+
+Snapshot-enabled VMs for safe rollback
+
+Lab email server / simulated messaging apps
+
+Logging tools: Screen capture, email response logging
+
+Scripting: Python, Bash, Node.js for automated lab campaigns
+
+
+Whaling Simulation:
+
+Create lab-safe executive persona
+
+Develop lab-targeted messages with urgency or business context
+
+Deliver to simulated executive accounts
+
+Monitor lab-only interactions and capture responses
+
+Evaluate effectiveness and human factor vulnerabilities
+
+
+Data Collection & Analysis:
+
+Metrics: Engagement rate, information disclosure, response time
+
+Analyze behavioral patterns and social engineering susceptibility
+
+Visualize attack flow: reconnaissance → targeted message → lab interaction → data capture → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real executives targeted
+
+Use only simulated accounts and lab-safe data
+
+Conduct all tests in isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Social Engineering Toolkit (SET) – Lab-only whaling campaigns
+
+Burp Suite / OWASP ZAP – Lab phishing portal simulation
+
+Lab email server – Simulated delivery & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab testing of email or messaging apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: smtplib, requests – Automated lab email/message delivery
+
+Node.js / JavaScript – Lab portal & message simulation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server for running simulations & VMs
+
+Isolated lab network for safe testing
+
+Optional VoIP or messaging simulators for lab-only interaction
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1534 – Whaling / CEO Fraud
+
+SANS Institute – Executive Social Engineering Labs
+
+IEEE / ACM Digital Library – Whaling attack research & human factor analysis
+
+

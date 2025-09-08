@@ -1,0 +1,152 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+DOM-based XSS হলো ক্রস-সাইট স্ক্রিপ্টিং এর একটি আক্রমণ যেখানে আক্রমণকারী ব্রাউজারের DOM (Document Object Model) কে ম্যানিপুলেট করে malicious script inject করে। এখানে সার্ভারের কোনো অংশ সরাসরি দায়ী হয় না; সবকিছু client-side JavaScript এর মাধ্যমে ঘটে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web applications, Single Page Applications (SPA)
+
+দুর্বলতা: Unsafe JavaScript DOM manipulation, user-controlled input reflection
+
+উদ্দেশ্য: Cookie/Token চুরি, session hijacking, lab-only exploit simulation
+
+গবেষণার জন্য ব্যবহার: lab simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Vulnerable DOM elements & input points চিহ্নিত করা
+
+
+2. Payload Crafting – Lab-only safe JavaScript payload তৈরি করা
+
+
+3. Exploitation – DOM input field বা URL hash/parameter এ payload inject করা
+
+
+4. Actions on Objectives – Lab-only cookie/token capture simulation
+
+
+5. Post-Exploitation – Lab response log এবং exploit success analysis
+
+
+
+টেকনিক:
+
+Unsafe innerHTML, document.write(), eval() ব্যবহার চিহ্নিত করা
+
+URL parameters বা fragment identifiers (#) ব্যবহার করে payload inject করা
+
+Event handlers (onclick, onmouseover) exploit করা lab environment এ
+
+Lab-only localStorage/sessionStorage data manipulation
+
+JavaScript execution simulation
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Vulnerable Web application sandbox (DVWA, WebGoat, custom lab SPA)
+
+Isolated network for DOM XSS testing
+
+
+DOM-based XSS Simulation:
+
+Identify lab input points that reflect data in DOM
+
+Inject lab-safe JavaScript payloads (e.g., alert('XSS'))
+
+Monitor execution in browser console
+
+Capture lab-only data manipulations, log results
+
+Evaluate effectiveness and impact of lab exploit
+
+
+Data Collection & Analysis:
+
+Payload execution success rate
+
+DOM manipulation logs
+
+Statistical analysis: input vectors, payload execution frequency
+
+Visualization: vulnerable DOM nodes, exploit paths
+
+
+Ethical / Legal Considerations:
+
+সব inputs এবং payloads lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Burp Suite – DOM input interception & manipulation
+
+DVWA / WebGoat – lab vulnerable apps
+
+Browser DevTools – JavaScript console, DOM inspection
+
+Wireshark – lab network monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – lab scripts & testing
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – lab network testing
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: requests, selenium (lab payload automation & simulation)
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & traffic analysis
+
+SQLite / DB tools – logging lab DOM XSS results
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / lab devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP DOM-based XSS Guidelines
+
+NIST SP 800-95 (Guide to Secure Web Services)
+
+MITRE ATT&CK T1059.007 – DOM-based XSS
+
+IEEE / ACM Digital Library – DOM XSS research papers
+
+

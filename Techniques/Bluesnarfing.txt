@@ -1,0 +1,152 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Bluesnarfing হলো ব্লুটুথ ব্যবহার করে কোনো ডিভাইস থেকে গোপন তথ্য (যেমন contacts, messages, calendar, files) চুরি করার আক্রমণ। এটি সাধারণত vulnerable Bluetooth-enabled devices বা unsecured pairing exploit করে করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Bluetooth-enabled devices (ফোন, ট্যাবলেট, ল্যাপটপ)
+
+দুর্বলতা: Weak pairing, discoverable mode, unpatched Bluetooth stacks
+
+উদ্দেশ্য: Data theft, credential collection, lab-only exploitation
+
+গবেষণার জন্য ব্যবহার: lab Bluetooth simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab Bluetooth devices discovery
+
+
+2. Exploit – Lab-only vulnerable device exploit (unauthorized OBEX / file access)
+
+
+3. Data Retrieval – Lab-only information extraction
+
+
+4. Optional Data Analysis – Simulated sensitive data evaluation
+
+
+5. Post-Exploitation – Log captured lab data, vulnerability assessment
+
+
+
+টেকনিক:
+
+Device scanning & identification using lab Bluetooth stack
+
+Exploit OBEX / file transfer service vulnerabilities
+
+Unauthorized data pull simulation in lab environment
+
+Lab-only session logging & analysis
+
+Optional MITM with lab rogue AP for wireless redirection
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Lab Bluetooth-enabled target devices (phones, emulators)
+
+Isolated lab network and Bluetooth environment
+
+Bluetooth adapter supporting discovery, pairing, OBEX
+
+
+Bluesnarfing Simulation:
+
+Scan lab target devices in discoverable mode
+
+Attempt unauthorized OBEX / file access (lab-only)
+
+Extract lab-safe data like contacts, messages, or calendar entries
+
+Log and analyze extracted data within lab environment
+
+Evaluate vulnerabilities, document lab findings
+
+
+Data Collection & Analysis:
+
+Metrics: number of lab devices accessed, data items retrieved
+
+Analyze weak pairing & discoverability impact
+
+Visualization: lab Bluetooth map, accessed data flow
+
+
+Ethical / Legal Considerations:
+
+All targets and data are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+BlueZ (Linux Bluetooth stack) – device scanning & exploitation
+
+bt-obex / obexftp – lab OBEX file access simulation
+
+Wireshark (Bluetooth capture) – optional lab traffic monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Kali NetHunter – lab Bluetooth exploitation & testing
+
+Termux – lab Bluetooth scripts
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+OBEX push apps (lab-safe) – test data transfer
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: pybluez (Bluetooth programming & lab exploitation)
+
+SQLite / DB tools – logging lab data retrieval
+
+Nmap – lab device scanning & service detection
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Bluetooth-enabled lab devices (phones, laptops, emulators)
+
+USB Bluetooth dongle supporting OBEX & promiscuous mode
+
+VirtualBox / VMware / Proxmox lab environment
+
+Isolated network for safe testing
+
+
+References / Research Sources:
+
+OWASP Mobile Security Guidelines
+
+NIST SP 800-121 (Guide to Bluetooth Security)
+
+MITRE ATT&CK T1432 – Bluesnarfing / Bluetooth data exfiltration
+
+IEEE / ACM Digital Library – Bluetooth attacks research papers
+
+

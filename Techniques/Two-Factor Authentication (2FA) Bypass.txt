@@ -1,0 +1,149 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Two-Factor Authentication (2FA) Bypass হলো আক্রমণ যেখানে আক্রমণকারী ব্যবহারকারীর 2FA প্রক্রিয়া এড়িয়ে গিয়ে unauthorized access পায়। এটি credential theft ছাড়াও session takeover বা social engineering ব্যবহার করে করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: ওয়েব অ্যাপ্লিকেশন, SaaS, ক্লাউড সার্ভিস
+
+Credential + 2FA token বা code ব্যবহার ছাড়া access
+
+উদ্দেশ্য: Unauthorized access, privilege escalation, data theft
+
+গবেষণার জন্য ব্যবহার: lab simulation, penetration testing, security research
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট ওয়েব অ্যাপ্লিকেশন ও 2FA mechanism পর্যবেক্ষণ
+
+
+2. 2FA Bypass Technique Identification – lab simulation of bypass methods
+
+
+3. Exploitation – lab environment এ bypass execution
+
+
+4. Actions on Objectives – session takeover, resource access, logging
+
+
+
+টেকনিক:
+
+Social engineering / phishing for token capture
+
+SIM swap simulation (lab-only)
+
+Exploiting predictable 2FA codes (TOTP/HOTP) in lab environment
+
+Session token replay / reuse simulation
+
+Backup code exploitation simulation
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Web application sandbox (DVWA, WebGoat) with 2FA enabled
+
+Android Emulator (Android Studio / Genymotion)
+
+Isolated network for 2FA testing
+
+
+2FA Bypass Simulation:
+
+Deploy lab test account with TOTP / SMS 2FA
+
+Simulate phishing / social engineering to capture 2FA token in lab
+
+Test backup codes, token replay, or session hijacking methods
+
+Log access attempts, bypass success, and system responses
+
+
+Data Collection & Analysis:
+
+Bypass success metrics
+
+Session takeover and privilege escalation logs
+
+Statistical analysis: code reuse, token prediction, user response rate
+
+Visualization: 2FA bypass timeline, access logs
+
+
+Ethical / Legal Considerations:
+
+All accounts and 2FA mechanisms are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Burp Suite – web traffic interception & token testing
+
+DVWA / WebGoat – vulnerable web applications with 2FA
+
+Wireshark – network traffic capture & analysis
+
+Bettercap – MITM simulation for token capture
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – mobile network & security lab
+
+
+Software Packages:
+
+Python: pyotp, requests, selenium (TOTP/HOTP simulation)
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & analysis
+
+SQLite / DB tools – logging token & session activity
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / lab devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP Authentication & 2FA Guidelines
+
+NIST SP 800-63B (Digital Identity Guidelines)
+
+MITRE ATT&CK T1111 – Multi-Factor Authentication Interception
+
+IEEE / ACM Digital Library – 2FA Bypass research papers
+
+

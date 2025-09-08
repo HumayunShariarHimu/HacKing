@@ -1,0 +1,150 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Eavesdropping Attack হলো এমন আক্রমণ যেখানে আক্রমণকারী ব্যবহারকারীর বা সিস্টেমের গোপন তথ্য (যেমন credentials, messages, network traffic) চুপচাপ সংগ্রহ বা পর্যবেক্ষণ করে। এটি সাধারণত unsecured communication channels, weak encryption বা wireless networks ব্যবহার করে করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Network traffic, Wi-Fi, VoIP, Messaging systems
+
+দুর্বলতা: Unencrypted data, weak protocols, misconfigured networks
+
+উদ্দেশ্য: Sensitive data capture, credential theft, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab network simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Identify target network, protocol, and endpoints
+
+
+2. Traffic Capture – Lab-only network sniffing
+
+
+3. Analysis – Extract credentials, messages, or metadata in lab
+
+
+4. Exploitation – Lab-only data replay or simulation
+
+
+5. Post-Exploitation – Log captured data and evaluate security weaknesses
+
+
+
+টেকনিক:
+
+Passive sniffing (Wireshark, tcpdump)
+
+Man-in-the-Middle simulation (lab-only)
+
+Packet analysis for sensitive information
+
+ARP spoofing / MITM lab simulation
+
+Monitoring wireless communication (lab Wi-Fi setup)
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Controlled lab network (wired/wireless)
+
+Lab devices for sending and receiving simulated traffic
+
+
+Eavesdropping Simulation:
+
+Configure lab network with test clients and servers
+
+Use packet capture tools to intercept lab traffic
+
+Analyze packets for lab-only credentials, messages, or tokens
+
+Simulate replay attacks or data analysis without affecting real users
+
+Log all captured packets and analyze security weaknesses
+
+
+Data Collection & Analysis:
+
+Capture success metrics (number of packets intercepted, sensitive data recovered)
+
+Statistical analysis: packet types, frequency, source/destination mapping
+
+Visualization: network diagrams, traffic flow, sensitive data locations
+
+
+Ethical / Legal Considerations:
+
+All targets and traffic are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Wireshark – packet capture and analysis
+
+tcpdump – command-line network sniffing
+
+Bettercap – MITM / traffic manipulation in lab
+
+Ettercap – ARP spoofing / lab simulation
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – network scripts & analysis
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – lab network sniffing and testing
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: scapy (packet crafting and analysis), requests (lab simulations)
+
+Nmap – network & service scanning
+
+SQLite / DB tools – logging intercepted packets and data
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+VirtualBox / VMware / Proxmox
+
+Router / Switch testbed for isolated lab network
+
+Lab Wi-Fi AP for wireless packet capture simulation
+
+Network interface cards supporting promiscuous mode
+
+
+References / Research Sources:
+
+OWASP Network Security Guidelines
+
+NIST SP 800-95 (Guide to Secure Web Services)
+
+MITRE ATT&CK T1040 – Network Sniffing / Eavesdropping
+
+IEEE / ACM Digital Library – Eavesdropping research papers
+
+

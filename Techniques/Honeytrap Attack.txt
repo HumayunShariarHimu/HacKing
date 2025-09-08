@@ -1,0 +1,145 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Honeytrap Attack হলো এমন একটি social engineering আক্রমণ যেখানে attacker লোভনীয় persona বা profile তৈরি করে ভিকটিমকে প্রলুব্ধ করে confidential information, credentials বা sensitive data দেয়ার জন্য।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Individuals, employees, বা organization users
+
+দুর্বলতা: Human curiosity, attraction, lack of verification
+
+উদ্দেশ্য: Lab-only social engineering research, behavioral analysis
+
+গবেষণার জন্য ব্যবহার: Security awareness, honeypot simulation
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target user বা group behavior চিহ্নিত করা
+
+
+2. Honeytrap Creation – Lab-safe persona বা profile তৈরি করা
+
+
+3. Engagement – Lab environment-এ persona interaction চালানো
+
+
+4. Information Extraction – Lab-safe sensitive data collection
+
+
+5. Logging & Analysis – Interaction capture & behavioral analysis
+
+
+6. Awareness & Mitigation – Lab results ব্যবহার করে social engineering awareness তৈরি
+
+
+
+টেকনিক:
+
+Fake social media profiles বা lab-safe dating profiles
+
+Lab-only chat, email, বা messaging interactions
+
+Prompts or requests to share confidential lab data
+
+Behavioral logging of engagement & responses
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual lab environment with simulated users
+
+Snapshot-enabled VMs for rollback
+
+Simulated communication channels: Email, chat, social media simulators
+
+Logging and monitoring tools: Screen capture, chat logs
+
+Scripting: Python, Node.js, or JavaScript for automated lab interactions
+
+
+Honeytrap Simulation:
+
+Create lab-safe honeytrap persona
+
+Engage simulated targets in lab environment
+
+Encourage lab targets to share information (credentials or lab-only data)
+
+Capture responses and interaction patterns
+
+Evaluate human behavioral tendencies and awareness effectiveness
+
+
+Data Collection & Analysis:
+
+Metrics: Number of lab targets interacting, information disclosed, engagement duration
+
+Analyze behavioral patterns and trust exploitation
+
+Visualize attack flow: honeytrap creation → victim engagement → data disclosure → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real users targeted
+
+Use only simulated accounts and lab-safe data
+
+Conduct all tests in isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Social Engineering Toolkit (SET) – Lab-only persona simulation
+
+Burp Suite / OWASP ZAP – Lab portal simulation
+
+Email clients & local SMTP server – Lab email simulations
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab testing of messaging apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: smtplib, requests – Automated lab interaction scripting
+
+Node.js / JavaScript – Lab portal & chat simulation scripting
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server for running simulations & VMs
+
+Isolated lab network for communication simulations
+
+Optional VoIP or messaging simulators for lab-only engagement
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1425 – Social Engineering
+
+SANS Institute – Social Engineering Labs & Awareness
+
+IEEE / ACM Digital Library – Honeytrap and honeypot research
+
+

@@ -1,0 +1,149 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Container Escape Attack হলো এমন একটি আক্রমণ যেখানে attacker কন্টেইনারের সীমা (Docker, Kubernetes) ভেঙে হোস্ট সিস্টেমে প্রবেশ করে। মূলত container isolation ভঙ্গ করে attacker root privileges বা sensitive host resources এক্সেস করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Docker, Kubernetes, LXC/LXD containers
+
+দুর্বলতা: Outdated container runtime, misconfigured capabilities, insecure host OS
+
+উদ্দেশ্য: Lab-only container escape simulation, security research
+
+গবেষণার জন্য ব্যবহার: Container isolation testing, vulnerability assessment
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab container environment & runtime চিহ্নিত করা
+
+
+2. Vulnerability Identification – Lab-safe container misconfigurations চিহ্নিত করা
+
+
+3. Exploit Development – Lab-safe escape exploit scripting
+
+
+4. Execution – Payload triggers container escape in lab VM
+
+
+5. Post-Escape – Lab-only host monitoring, logging, and analysis
+
+
+6. Remediation Testing – Evaluate container runtime hardening & mitigations
+
+
+
+টেকনিক:
+
+Privilege escalation via misconfigured capabilities (CAP_SYS_ADMIN, CAP_NET_ADMIN)
+
+Kernel exploits targeting container isolation
+
+Mount namespace & cgroups exploitation
+
+Lab-only payload injection and monitoring
+
+Analysis of container escape patterns
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual Machines or lab servers with Docker / Kubernetes setup
+
+Snapshot-enabled VM for rollback & safe testing
+
+Lab-safe vulnerable container images
+
+Scripting: Python, Bash, or Go for lab exploits
+
+Monitoring: Sysdig, auditd, dmesg, kernel logs
+
+
+Container Escape Simulation:
+
+Deploy lab-safe vulnerable container
+
+Execute lab-only exploit targeting container capabilities or kernel
+
+Observe lab VM host for privilege escalation and resource access
+
+Capture logs, file system changes, and system calls for analysis
+
+Test effectiveness of container security hardening (AppArmor, SELinux, seccomp)
+
+
+Data Collection & Analysis:
+
+Metrics: Escape success rate, host access, detection by monitoring tools
+
+Analyze kernel call logs and container runtime events
+
+Visualize attack flow: container compromise → escape exploit → host access → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no attacks on production or public systems
+
+Use only licensed or open-source container images and lab-safe exploits
+
+Conduct all tests in isolated environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Sysdig Falco – Container activity monitoring in lab
+
+runc / Docker – Lab container runtime
+
+Kubernetes Minikube / Kind – Lab cluster simulation
+
+Auditd / dmesg – Host monitoring & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation (optional)
+
+Android Emulator – Lab testing of containerized apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / Bash / Go – Lab-safe container escape scripting
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab server or PC capable of running Docker/Kubernetes VMs
+
+Isolated lab network for safe container testing
+
+Snapshot-enabled VMs for rollback and safe experimentation
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1611 – Escape to Host
+
+Docker Security Best Practices – Container hardening
+
+Kubernetes Security Guide – Pod & container isolation
+
+IEEE / ACM Digital Library – Container escape & security research papers
+
+

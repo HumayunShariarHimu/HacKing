@@ -1,0 +1,146 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+DMA Attack (Direct Memory Access Attack) হলো আক্রমণ যেখানে আক্রমণকারী সরাসরি কম্পিউটারের RAM বা মেমরিতে প্রবেশ করে sensitive data অ্যাক্সেস করে। এটি মূলত Thunderbolt, FireWire, PCIe বা অন্যান্য DMA-capable ইন্টারফেস ব্যবহার করে করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Laptops, Desktops, Servers, DMA-enabled devices
+
+দুর্বলতা: Unprotected DMA ports, lack of IOMMU / memory isolation
+
+উদ্দেশ্য: Encryption key recovery, credential theft, sensitive data extraction, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: Lab DMA vulnerability research, memory forensics, penetration testing
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab system & DMA-enabled ports চিহ্নিত করা
+
+
+2. Memory Access – Lab-safe DMA read/write operations
+
+
+3. Analysis – Collected memory data থেকে sensitive info recovery
+
+
+4. Post-Exploitation – Lab-only credential / key extraction
+
+
+5. Remediation Testing – DMA protections evaluation (IOMMU, port locks)
+
+
+
+টেকনিক:
+
+Thunderbolt / FireWire DMA read access
+
+PCIe card exploitation in lab
+
+Direct memory mapping & dump collection
+
+Lab-only credential / encryption key extraction
+
+DMA memory snapshot & analysis
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Lab PC with DMA-enabled ports (Thunderbolt, FireWire, PCIe)
+
+Isolated lab VM with memory mapping simulation
+
+Memory acquisition & analysis tools: WinPMEM, LiME
+
+Snapshot-enabled lab environment for safe rollback
+
+
+DMA Attack Simulation:
+
+Identify lab-safe DMA-capable port
+
+Connect lab DMA device or use VM memory mapping
+
+Access and dump RAM content in lab-only setup
+
+Analyze dump for lab-safe credentials, keys, or sensitive data
+
+Log lab-only findings & evaluate port security measures
+
+
+Data Collection & Analysis:
+
+Metrics: memory regions accessed, keys/credentials retrieved, success rate
+
+Analyze vulnerabilities in DMA access control
+
+Visualize memory layout & accessed sensitive regions
+
+
+Ethical / Legal Considerations:
+
+All DMA operations performed in lab-only or simulated environment
+
+Licensed / lab-safe tools only
+
+No real system exploitation without consent
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Inception – Thunderbolt DMA attack simulation in lab
+
+PCILeech – lab-safe DMA memory access & dumping
+
+WinPMEM / LiME – lab memory acquisition
+
+Volatility / Rekall – lab memory analysis
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – lab memory dump parsing & analysis
+
+Android Emulator (Android Studio / Genymotion) – lab DMA simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / C – lab memory parsing & credential extraction scripts
+
+SQLite / DB tools – log lab memory & DMA analysis results
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC with Thunderbolt / FireWire / PCIe ports
+
+DMA-capable PCIe card for lab simulation
+
+USB / SATA adapters (optional, lab memory dump extraction)
+
+Snapshot-enabled VM environment for safe lab simulation
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1557.001 – DMA Attack / Peripheral Exploitation
+
+NIST SP 800-147 & SP 800-125 – Memory / IOMMU Security Guidelines
+
+IEEE / ACM Digital Library – DMA attack research papers
+
+PCILeech & Inception documentation – lab DMA testing
+
+

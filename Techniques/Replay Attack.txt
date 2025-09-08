@@ -1,0 +1,146 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Replay Attack হলো আক্রমণ যেখানে পূর্বে বৈধভাবে প্রাপ্ত অথেনটিকেশন ডেটা বা ট্রানজ্যাকশন ডেটা পুনরায় ব্যবহার করা হয়। এতে আক্রমণকারী unauthorized access বা duplicate transaction করতে পারে। মূলত সার্ভার/সিস্টেম যেখানে timestamp বা nonce validation নেই, সেখানে এটি কার্যকর হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Authentication protocols, APIs, network transactions
+
+দুর্বলতা: Lack of nonce, timestamps, session validation, weak encryption
+
+উদ্দেশ্য: Unauthorized access, duplicate transactions, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab environment, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target authentication messages, session tokens, API calls চিহ্নিত করা
+
+
+2. Capture – Lab-only network or application data capture
+
+
+3. Replay – Captured data পুনরায় target system-এ পাঠানো
+
+
+4. Actions on Objectives – Lab-only unauthorized access বা duplicate transaction simulation
+
+
+5. Post-Exploitation – Lab results log, vulnerability assessment
+
+
+
+টেকনিক:
+
+Passive sniffing: network authentication data capture
+
+Packet replay: HTTP requests, API calls resending
+
+Timestamp / nonce bypass simulation
+
+Session hijacking simulation in lab
+
+Duplicate transaction simulation for testing
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Lab web application, API, বা authentication system
+
+Isolated network for controlled replay testing
+
+
+Replay Attack Simulation:
+
+Capture authentication messages (e.g., login tokens, session cookies) using lab sniffing tools
+
+Resend messages to lab system, observe lab-only effects
+
+Simulate unauthorized access or transaction duplication
+
+Log success rate, timing vulnerabilities, server responses
+
+
+Data Collection & Analysis:
+
+Metrics: successful replay attempts, lab-only unauthorized access
+
+Analyze authentication mechanism weaknesses
+
+Visualization: message flow, vulnerable endpoints, timing analysis
+
+
+Ethical / Legal Considerations:
+
+সব payload, authentication data, এবং endpoints lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Burp Suite – HTTP/HTTPS request capture & replay
+
+Wireshark / tcpdump – network packet capture
+
+Postman – lab API request replay
+
+Bettercap / Ettercap – MITM / packet replay simulation
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – network scripts & replay simulation
+
+Android Emulator (Android Studio / Genymotion) – lab environment
+
+Kali NetHunter – lab sniffing & replay testing
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: scapy (packet crafting & replay), requests (API simulation)
+
+Nmap – network & service scanning
+
+SQLite / DB tools – logging replay attempts
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+VirtualBox / VMware / Proxmox
+
+Router / Switch testbed for isolated lab network
+
+Network interface cards supporting promiscuous mode
+
+
+References / Research Sources:
+
+OWASP Authentication & Session Management Guidelines
+
+NIST SP 800-95 (Guide to Secure Web Services)
+
+MITRE ATT&CK T1071 – Replay Attack / Credential Reuse
+
+IEEE / ACM Digital Library – Replay Attack research papers
+
+

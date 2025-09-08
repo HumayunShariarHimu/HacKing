@@ -1,0 +1,149 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Man-in-the-Browser (MitB) Attack হলো এক ধরনের আক্রমণ যেখানে আক্রমণকারী victim-এর ব্রাউজার প্রসেসে ম্যালওয়্যার ইনজেক্ট করে sensitive তথ্য (যেমন login credentials, banking details) চুরি করে। এটি মূলত HTTPS/SSL encryption বাইপাস করে browser-level data interception করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web browsers, Online banking portals, e-commerce platforms
+
+দুর্বলতা: Outdated browser, insecure extensions, client-side script vulnerabilities
+
+উদ্দেশ্য: Lab-only credentials collection, session hijacking, sensitive data theft
+
+গবেষণার জন্য ব্যবহার: Browser security research, MitB simulation, malware analysis
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab target browser & version চিহ্নিত করা
+
+
+2. Malware Injection – Lab-safe browser process or extension modification
+
+
+3. Interception – Capture lab-only user input & browser transactions
+
+
+4. Data Extraction – Lab-safe logging of credentials, session tokens
+
+
+5. Post-Exploitation – Lab-only simulation of banking transaction manipulation
+
+
+6. Remediation Testing – Evaluate browser & extension security measures
+
+
+
+টেকনিক:
+
+Browser extension / plugin injection
+
+Script hooking into form submission
+
+Session token interception & modification
+
+Lab-only logging of sensitive data
+
+Analysis of MitB malware behavior in controlled environment
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Lab VM with target browser (Chrome, Firefox, Edge)
+
+Lab-safe testing accounts & websites
+
+Scripting environment: Python, JavaScript for automation & logging
+
+Snapshot-enabled VM for rollback & safety
+
+
+MitB Simulation:
+
+Inject lab-safe script or extension into lab browser
+
+Intercept lab-safe form submissions and transactions
+
+Capture sensitive inputs (username, password, session cookies)
+
+Optionally simulate transaction modification in lab-only environment
+
+Log lab-only findings & evaluate browser security mechanisms
+
+
+Data Collection & Analysis:
+
+Metrics: Number of intercepted fields, session tokens captured, success rate
+
+Analyze browser vulnerabilities and extension security
+
+Visualize attack flow: input interception → session token capture → optional transaction manipulation
+
+
+Ethical / Legal Considerations:
+
+All experiments performed on lab VM or isolated environment
+
+No attacks on real systems without explicit consent
+
+Use licensed/open-source tools only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Burp Suite / OWASP ZAP – Lab HTTP/HTTPS traffic interception & analysis
+
+Browser DevTools – Lab DOM & JavaScript inspection
+
+BeEF (Browser Exploitation Framework) – Lab MitB simulation
+
+Python / Node.js – Lab scripting & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab browser simulation
+
+Kali NetHunter – Optional lab testing & traffic interception
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: selenium, requests – Lab browser automation & MitB simulation
+
+SQLite / DB tools – Lab logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server with snapshot-enabled VM
+
+Isolated lab network for safe MitB testing
+
+Optional hardware proxy (e.g., lab-only USB Ethernet adapter) for traffic capture
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1185 – Man-in-the-Browser
+
+OWASP Top 10 – Client-side vulnerabilities & MitB
+
+BeEF Project Documentation – Lab browser exploitation framework
+
+IEEE / ACM Digital Library – Browser-based attack research papers
+
+

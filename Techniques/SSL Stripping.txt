@@ -1,0 +1,149 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+SSL Stripping হলো এক ধরনের Man-in-the-Middle (MitM) আক্রমণ যেখানে আক্রমণকারী victim-এর HTTPS ট্রাফিককে HTTP-এ downgrade করে। এর মাধ্যমে attacker sensitive data (login credentials, cookies, session tokens) plaintext আকারে capture করতে পারে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web browsers, HTTPS-enabled websites
+
+দুর্বলতা: Sites without HSTS, users ignoring security warnings, insecure redirects
+
+উদ্দেশ্য: Lab-only credential/session token capture, vulnerability research
+
+গবেষণার জন্য ব্যবহার: Lab HTTPS downgrade simulation, network security evaluation
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab network topology ও target website চিহ্নিত করা
+
+
+2. Traffic Interception – Lab MitM setup (ARP spoofing, Wi-Fi AP)
+
+
+3. Downgrade – HTTPS request/response downgrade to HTTP
+
+
+4. Data Capture – Lab-only credentials, cookies, session tokens logging
+
+
+5. Post-Exploitation – Lab-only simulation of intercepted data use
+
+
+6. Remediation Testing – Evaluate HSTS, secure cookies, HTTPS enforcement
+
+
+
+টেকনিক:
+
+Lab MitM setup using ARP spoofing / rogue AP
+
+HTTP downgrade of intercepted HTTPS requests
+
+Lab-only capture of plaintext credentials & session cookies
+
+Analyze user/browser behavior during downgrade
+
+Log lab-safe data for research purposes
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Isolated lab network with target VM and browser
+
+Lab test websites supporting HTTPS
+
+MitM tool: ARP spoofing or lab rogue access point
+
+Scripting environment: Python / Bash for automated logging
+
+Snapshot-enabled VM for rollback & safe testing
+
+
+SSL Stripping Simulation:
+
+Intercept lab HTTPS traffic via lab MitM
+
+Modify traffic headers to remove HTTPS, force HTTP connection
+
+Capture lab-safe plaintext credentials and session tokens
+
+Log attack steps and analyze vulnerability impact
+
+Evaluate site HSTS and browser warning effectiveness
+
+
+Data Collection & Analysis:
+
+Metrics: Number of credentials/session tokens captured, attack success rate
+
+Analyze network & website weaknesses
+
+Visualize attack flow: traffic interception → HTTPS downgrade → data capture
+
+
+Ethical / Legal Considerations:
+
+All traffic capture & downgrade experiments conducted on lab-only environment
+
+No real user traffic intercepted
+
+Licensed/open-source tools only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Bettercap / MITMf – Lab MitM & SSL stripping
+
+Wireshark – Lab traffic analysis
+
+Burp Suite – Lab HTTP/HTTPS interception & modification
+
+Python / Bash – Lab automation & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & MitM simulation
+
+Android Emulator – Lab browser HTTPS traffic simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: scapy, requests – Lab MitM & SSL stripping simulation
+
+SQLite / DB tools – Lab logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server with snapshot-enabled VM
+
+Optional lab rogue Wi-Fi AP for MitM experiments
+
+Isolated lab network for safe SSL stripping testing
+
+
+References / Research Sources:
+
+Moxie Marlinspike, “SSL Stripping” – Original Research Paper
+
+MITRE ATT&CK T1557.002 – HTTPS Downgrade / Man-in-the-Middle
+
+OWASP Top 10 – Security Misconfigurations & Network Attacks
+
+IEEE / ACM Digital Library – SSL/TLS downgrade attack research
+
+

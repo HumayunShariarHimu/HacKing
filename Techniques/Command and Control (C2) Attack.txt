@@ -1,0 +1,149 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Command and Control (C2) Attack হলো এমন একটি আক্রমণ যেখানে attacker দূর থেকে ম্যালওয়্যার বা compromised system নিয়ন্ত্রণ করে। C2 সার্ভার ব্যবহার করে infected systems থেকে ডেটা এক্সফিলট্রেশন, ফাইল ডাউনলোড/আপলোড, এবং অতিরিক্ত কমান্ড পাঠানো হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Compromised endpoints, IoT devices, lab VMs
+
+দুর্বলতা: Open ports, unmonitored network traffic, weak endpoint security
+
+উদ্দেশ্য: Lab-only malware command simulation, threat research
+
+গবেষণার জন্য ব্যবহার: Malware behavior analysis, network defense evaluation
+
+
+Attack Lifecycle:
+
+1. Initial Compromise – Lab-safe malware infect lab VM
+
+
+2. Establish C2 Channel – Lab-only controlled C2 server setup
+
+
+3. Command Execution – Lab C2 sends commands to lab malware
+
+
+4. Data Exfiltration – Lab-only logging of simulated sensitive data
+
+
+5. Persistence – Maintain lab malware connection in isolated VM
+
+
+6. Detection & Mitigation Testing – Evaluate network monitoring & defense tools
+
+
+
+টেকনিক:
+
+HTTP/HTTPS C2 channels
+
+DNS Tunneling for covert communication
+
+Peer-to-Peer (P2P) C2 networks in lab
+
+Lab-only payload execution & logging
+
+Traffic monitoring and network pattern analysis
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual Machines for lab malware and lab target systems
+
+Isolated lab network for C2 traffic
+
+Snapshot-enabled VM for rollback & safe testing
+
+Scripting: Python, PowerShell, Bash for lab C2 commands
+
+Monitoring: Wireshark, Zeek (Bro), Network analyzers
+
+
+C2 Attack Simulation:
+
+Deploy lab-safe malware in lab VM
+
+Set up lab-only C2 server to send/receive commands
+
+Execute lab-safe commands: file read/write, process execution, simulated data exfiltration
+
+Capture network traffic, command logs, and endpoint behavior
+
+Evaluate detection & mitigation effectiveness
+
+
+Data Collection & Analysis:
+
+Metrics: Command success rate, latency, network patterns
+
+Analyze communication methods (HTTP, DNS, P2P)
+
+Visualize attack flow: compromise → C2 establishment → command execution → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real network compromise
+
+Use only licensed/open-source tools and lab-safe malware
+
+Conduct in isolated lab environment to prevent collateral impact
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Metasploit Framework – Lab-safe malware & C2 setup
+
+Cobalt Strike (Lab license or simulation) – C2 simulation
+
+Empire / PoshC2 – Lab-only post-exploitation & command execution
+
+Wireshark / Zeek (Bro) – Network traffic monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & command automation
+
+Android Emulator – Lab testing of controlled malware apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / PowerShell / Bash – Lab C2 scripting & automation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server capable of running multiple VM environments
+
+Isolated lab network for safe C2 traffic simulation
+
+Optional secondary monitoring machine for network/process capture
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1071 – Application Layer Protocol
+
+MITRE ATT&CK T1105 – Ingress Tool Transfer
+
+SANS Institute – C2 malware simulation & detection
+
+IEEE / ACM Digital Library – Command and Control attack research papers
+
+

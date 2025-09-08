@@ -1,0 +1,146 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Bluejacking হলো ব্লুটুথ ব্যবহার করে অপরিচিত বা অজ্ঞাত ব্যবহারকারীর ডিভাইসে অবাঞ্ছিত মেসেজ পাঠানোর আক্রমণ। এটি সাধারণত contact sharing বা vCard exploit করে করা হয়। Bluejacking কোনো ডিভাইসের ডেটা চুরি করে না, কিন্তু এটি ব্যবহারকারীদের বিরক্ত করতে বা social engineering এর জন্য ব্যবহৃত হতে পারে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Bluetooth-enabled devices (ফোন, ট্যাবলেট, ল্যাপটপ)
+
+দুর্বলতা: Discoverable mode চালু থাকা, weak pairing security
+
+উদ্দেশ্য: Lab-only message sending, annoyance simulation, social engineering research
+
+গবেষণার জন্য ব্যবহার: lab Bluetooth simulation, penetration testing
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab Bluetooth devices discoverable mode চিহ্নিত করা
+
+
+2. Message Crafting – Lab-safe vCard বা text message তৈরি করা
+
+
+3. Message Sending – Lab-only message broadcast করা
+
+
+4. Optional Response Logging – Lab devices এর reactions capture করা
+
+
+5. Post-Attack – Lab logs & analysis
+
+
+
+টেকনিক:
+
+Device scanning: Lab devices detect করা
+
+vCard exploit: Lab-safe name field ব্যবহার করে message পাঠানো
+
+Broadcast range manipulation: Lab Bluetooth signal control
+
+Lab-only message logging
+
+Optional social engineering simulation in lab
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – lab VM environment
+
+Lab Bluetooth-enabled devices (phones, laptops, emulators)
+
+Isolated lab network for safe testing
+
+Bluetooth dongle or built-in adapter supporting discovery & pairing
+
+
+Bluejacking Simulation:
+
+Enable discoverable mode on lab target devices
+
+Craft lab-safe message in vCard format
+
+Send message via Bluetooth to lab devices
+
+Capture any response in lab environment
+
+Log success rate, message delivery time, and device reactions
+
+
+Data Collection & Analysis:
+
+Metrics: number of messages sent, lab devices reached
+
+Analyze Bluetooth discoverability impact
+
+Visualization: lab Bluetooth map, connected devices, message flow
+
+
+Ethical / Legal Considerations:
+
+All targets are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+BlueZ (Linux Bluetooth stack) – device scanning & message sending
+
+Bluetoothctl – command-line lab simulation
+
+Wireshark (Bluetooth protocol capture) – optional lab traffic monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Bluetooth Auto Sender – lab message sending simulation
+
+Termux – lab Bluetooth scripts
+
+Android Emulator (Android Studio / Genymotion) – lab device simulation
+
+Kali NetHunter – lab Bluetooth testing & simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: pybluez (Bluetooth programming & lab message simulation)
+
+SQLite / DB tools – logging lab messages
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Bluetooth-enabled lab devices (phones, laptops, emulators)
+
+USB Bluetooth dongle supporting discovery & pairing
+
+VirtualBox / VMware / Proxmox lab environment
+
+
+References / Research Sources:
+
+OWASP Mobile Security Guidelines
+
+NIST SP 800-121 (Guide to Bluetooth Security)
+
+IEEE / ACM Digital Library – Bluetooth attacks research papers
+
+MITRE ATT&CK T1431 – Bluejacking / Bluetooth messaging attack
+
+

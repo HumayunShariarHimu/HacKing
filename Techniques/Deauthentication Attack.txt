@@ -1,0 +1,150 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Deauthentication Attack হলো আক্রমণ যেখানে আক্রমণকারী Wi-Fi ব্যবহারকারীর সংযোগ উদ্দেশ্যপ্রণোদিতভাবে বিচ্ছিন্ন করে। এটি সাধারণত management frames ব্যবহার করে করা হয় এবং ক্লায়েন্টকে পুনরায় সংযোগ করার জন্য বাধ্য করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Wi-Fi networks, client devices
+
+দুর্বলতা: Unprotected 802.11 management frames, weak Wi-Fi security
+
+উদ্দেশ্য: Denial-of-Service (DoS), Rogue AP redirect, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab network simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target Wi-Fi network and clients চিহ্নিত করা
+
+
+2. Packet Injection – Lab-only deauth frames তৈরি করা
+
+
+3. Disconnection – Lab clients কে temporary disconnect করা
+
+
+4. Optional Rogue AP – Lab-only redirect onto rogue AP
+
+
+5. Post-Exploitation – Log impact metrics, evaluate vulnerability
+
+
+
+টেকনিক:
+
+Crafting 802.11 deauthentication frames
+
+Sending frames to target clients (lab-only)
+
+Timing control to simulate DoS effect
+
+Optional MITM with lab rogue AP redirection
+
+Lab traffic monitoring during attack
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Wireless AP and lab client devices
+
+Isolated network for safe testing
+
+
+Deauthentication Simulation:
+
+Identify lab clients connected to lab AP
+
+Use lab tools to send deauth frames to clients
+
+Observe lab-only disconnection effects
+
+Optionally redirect clients to lab rogue AP
+
+Log timing, number of frames sent, and lab responses
+
+
+Data Collection & Analysis:
+
+Metrics: disconnected clients, duration of disconnection
+
+Analyze vulnerability of lab APs to deauth frames
+
+Visualization: lab network topology, affected clients
+
+
+Ethical / Legal Considerations:
+
+All APs, clients, and traffic are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Aircrack-ng suite (aireplay-ng) – deauth frame injection
+
+Wireshark – monitor lab traffic & impact
+
+Bettercap – lab MITM & deauth simulation
+
+Hostapd – lab AP setup
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Kali NetHunter – deauth attack & lab rogue AP testing
+
+Termux – lab scripts for packet injection
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: scapy (crafting & sending deauth frames in lab)
+
+Nmap – lab network & device scanning
+
+SQLite / DB tools – logging lab attack metrics
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Wireless network adapter supporting monitor mode & packet injection
+
+Router / Switch testbed for isolated lab network
+
+VirtualBox / VMware / Proxmox
+
+Lab client devices (PCs, phones, emulators)
+
+
+References / Research Sources:
+
+OWASP Wireless Security Guidelines
+
+NIST SP 800-153 (Guidelines for Securing Wireless Networks)
+
+MITRE ATT&CK T1583.001 – Wi-Fi Deauthentication Attack
+
+IEEE / ACM Digital Library – Deauthentication / Wi-Fi attacks research papers
+
+

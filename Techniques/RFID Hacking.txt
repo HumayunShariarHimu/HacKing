@@ -1,0 +1,148 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+RFID Hacking হলো RFID (Radio-Frequency Identification) কার্ড বা ট্যাগের তথ্য চুরি বা ক্লোন করার আক্রমণ। আক্রমণকারী RFID reader বা sniffing device ব্যবহার করে কার্ডের unique identifier, access credentials বা payment data capture করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Access cards, transit cards, contactless payment cards
+
+দুর্বলতা: Unencrypted RFID protocols, low-frequency tags, weak authentication
+
+উদ্দেশ্য: Unauthorized access, credential cloning, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab RFID simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab RFID cards & readers চিহ্নিত করা
+
+
+2. Capture – Lab-only RFID signal sniffing
+
+
+3. Analysis – Extract card ID, unique identifier
+
+
+4. Cloning – Lab-only duplicate card creation
+
+
+5. Post-Exploitation – Log captured lab data, evaluate vulnerabilities
+
+
+
+টেকনিক:
+
+RFID signal sniffing & eavesdropping in lab
+
+Card ID extraction using lab RFID reader
+
+Lab-only cloning using compatible RFID writer
+
+Timing and proximity simulation in lab
+
+Optional lab analysis of encrypted/unencrypted tag data
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM (optional for software simulation)
+
+Lab RFID cards (LF/HF tags)
+
+RFID reader & writer hardware
+
+Isolated lab environment for safe testing
+
+
+RFID Hacking Simulation:
+
+Scan lab RFID card using compatible reader
+
+Capture card ID and data
+
+Write lab-safe duplicate to blank RFID card using writer
+
+Test access in lab-controlled system
+
+Log metrics: captured IDs, cloning success, system response
+
+
+Data Collection & Analysis:
+
+Metrics: number of cards read, cloned, tested in lab
+
+Analyze weak encryption & access protocol vulnerabilities
+
+Visualization: lab RFID system map, cloned card workflow
+
+
+Ethical / Legal Considerations:
+
+All RFID cards and readers are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Proxmark3 – RFID sniffing, analysis & cloning
+
+Libnfc – software library for NFC/RFID communication in lab
+
+Wireshark (for lab networked RFID system capture)
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+NFC Tools / NXP TagInfo – lab RFID analysis & testing
+
+Termux – lab scripts for NFC/RFID simulation
+
+Android Emulator (Android Studio / Genymotion) – lab environment
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: nfcpy (lab RFID programming & simulation)
+
+SQLite / DB tools – logging captured RFID data
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Proxmark3 or similar RFID reader/writer
+
+Lab RFID cards (LF/HF, blank and writable)
+
+USB NFC/RFID adapters
+
+VirtualBox / VMware lab environment
+
+Isolated lab access control system for testing
+
+
+References / Research Sources:
+
+OWASP IoT & Embedded Security Guidelines
+
+NIST SP 800-121 & 800-153 – RFID/NFC Security Guides
+
+MITRE ATT&CK T1585 – RFID Card/Tag Exploitation
+
+IEEE / ACM Digital Library – RFID cloning & security research papers
+
+

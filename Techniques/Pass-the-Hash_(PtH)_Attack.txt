@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Pass-the-Hash (PtH) Attack হলো আক্রমণের ধরণ যেখানে আক্রমণকারী হ্যাশড পাসওয়ার্ড ব্যবহার করে সরাসরি অথেনটিকেশন পাস করে, সিস্টেমে লগইন করতে পারে, মূল পাসওয়ার্ড জানা প্রয়োজন নেই।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Windows environments, Active Directory, SMB, RDP, NTLM authentication
+
+Credential theft ছাড়াই unauthorized access
+
+উদ্দেশ্য: Lateral movement, privilege escalation, domain compromise
+
+গবেষণার জন্য ব্যবহার: lab simulation, penetration testing, security research
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট Windows environment এবং hashed credentials collection
+
+
+2. Hash Extraction – lab-only SAM / NTDS.dit / memory dump থেকে hash collection
+
+
+3. Hash Replay – lab-only authentication using extracted hashes
+
+
+4. Lateral Movement – lab simulation of access to other systems using PtH
+
+
+5. Actions on Objectives – privilege escalation, resource access, logging
+
+
+
+টেকনিক:
+
+SAM / NTDS.dit / LSASS memory dump
+
+NTLM hash reuse
+
+Lateral movement via SMB, RDP, WMI in lab
+
+Pass-the-Ticket simulation (Kerberos token)
+
+Credential caching exploitation
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated Windows lab
+
+Kali Linux / Parrot OS VM
+
+Windows Server / Workstation lab environment
+
+Isolated network for credential testing
+
+
+Pass-the-Hash Simulation:
+
+Extract NTLM hashes from lab Windows VM using Mimikatz or similar
+
+Replay hashes for authentication in isolated lab
+
+Access lab resources without plaintext password
+
+Log access attempts, success rate, and privilege escalation
+
+
+Data Collection & Analysis:
+
+Hash extraction success metrics
+
+Authentication success rate using PtH
+
+Lateral movement simulation results
+
+Statistical analysis: compromised accounts, access timelines
+
+
+Ethical / Legal Considerations:
+
+All targets are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Mimikatz – hash extraction & PtH simulation
+
+Metasploit – lab exploitation & PtH simulation
+
+PowerShell Empire / Cobalt Strike – lab lateral movement simulation
+
+Wireshark – network monitoring
+
+
+Android / Mobile Tools:
+
+Termux – lab scripts & network testing
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – lab network testing
+
+
+Software Packages:
+
+Python: impacket library (SMB, NTLM authentication, PtH simulation)
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & traffic analysis
+
+SQLite / DB tools – logging access attempts
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Isolated Windows lab environment
+
+Router / Switch testbed for lab network
+
+
+References / Research Sources:
+
+OWASP Windows Security Guidelines
+
+NIST SP 800-115 (Technical Guide to InfoSec Testing)
+
+MITRE ATT&CK T1075 – Pass-the-Hash
+
+IEEE / ACM Digital Library – Pass-the-Hash research papers
+
+

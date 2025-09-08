@@ -1,0 +1,142 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Padding Oracle Attack হলো এক ধরনের ক্রিপ্টোগ্রাফিক আক্রমণ যেখানে এনক্রিপশন স্কিমের padding validation দুর্বলতা ব্যবহার করে plaintext বা sensitive তথ্য উদ্ধার করা হয়। এটি মূলত block cipher modes (যেমন CBC) এর ক্ষেত্রে ঘটে যেখানে padding error এর মাধ্যমে আক্রমণকারী ciphertext থেকে original data বের করতে পারে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web applications, encrypted messages, CBC mode block cipher systems
+
+দুর্বলতা: Padding error message reveals, predictable padding validation
+
+উদ্দেশ্য: Lab-only plaintext recovery, encryption key inference, vulnerability testing
+
+গবেষণার জন্য ব্যবহার: Lab cryptography research, secure padding design evaluation
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab target encryption method & block size চিহ্নিত করা
+
+
+2. Ciphertext Acquisition – Lab-safe encrypted message collection
+
+
+3. Oracle Querying – Padding validation error analysis
+
+
+4. Plaintext Recovery – Lab-only iterative modification of ciphertext
+
+
+5. Remediation Testing – Evaluate padding error handling & secure crypto practices
+
+
+
+টেকনিক:
+
+CBC mode exploitation with padding oracle
+
+Iterative ciphertext modification & query
+
+Error message analysis for padding validation
+
+Lab-only plaintext reconstruction
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Lab VM hosting target web application or encryption service
+
+Lab-safe encrypted test messages
+
+Scripting environment: Python, JavaScript, or C for automated oracle queries
+
+Logging & analysis environment: SQLite / CSV / Lab DB
+
+
+Padding Oracle Simulation:
+
+Send modified ciphertext blocks to lab-safe oracle
+
+Observe padding validation response (valid/invalid)
+
+Iteratively adjust ciphertext to recover lab-safe plaintext
+
+Log steps & recovered plaintext for analysis
+
+Evaluate padding handling & secure encryption implementation
+
+
+Data Collection & Analysis:
+
+Metrics: Number of oracle queries, success rate, plaintext bytes recovered
+
+Analyze vulnerability in padding validation & crypto implementation
+
+Visualize attack process: modified ciphertext → oracle query → plaintext recovery
+
+
+Ethical / Legal Considerations:
+
+All oracle queries and plaintext recovery performed on lab-only environment
+
+No attacks on real systems without explicit consent
+
+Use licensed or open-source tools only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Burp Suite / OWASP ZAP – Lab web application penetration testing
+
+Padding Oracle Exploit Framework (POET / lab scripts)
+
+Python / Ruby / C – Lab scripting for oracle queries
+
+Wireshark – Optional lab network monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab web app & encrypted message simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: requests, pycryptodome – Lab oracle query & crypto handling
+
+SQLite / DB tools – Lab logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server with VM environment for target web application
+
+Isolated lab network for safe encryption testing
+
+Snapshot-enabled VM for rollback & lab safety
+
+
+References / Research Sources:
+
+Vaudenay, “Padding Oracle Attacks on CBC-mode Encryption” – Original Paper
+
+MITRE ATT&CK T1552.002 – Encrypted Data Exploitation
+
+OWASP Cryptography Cheat Sheet – Padding Oracle Mitigation
+
+Lab cryptography research papers in IEEE / ACM Digital Library
+
+

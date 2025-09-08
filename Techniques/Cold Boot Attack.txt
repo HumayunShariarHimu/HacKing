@@ -1,0 +1,146 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Cold Boot Attack হলো এক ধরনের আক্রমণ যেখানে কম্পিউটার বা ল্যাপটপের RAM থেকে sensitive বা encrypted তথ্য উদ্ধার করা হয়। এটি মূলত volatile memory-এর অসহায় অবস্থার সুযোগ নিয়ে করা হয়, যেমন পাওয়ার অফ করার পর কিছুক্ষণের জন্য RAM-এর মধ্যে ডেটা থাকে। আক্রমণকারীরা এই সুযোগ ব্যবহার করে encryption keys, passwords বা অন্যান্য sensitive তথ্য lab-only environment এ উদ্ধার করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Laptops, Desktops, Servers
+
+দুর্বলতা: RAM content retention after power-off, weak or absent memory encryption
+
+উদ্দেশ্য: Encryption key recovery, credential extraction, lab simulation
+
+গবেষণার জন্য ব্যবহার: Lab memory forensic research, vulnerability testing
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab system memory size, OS, encryption type চিহ্নিত করা
+
+
+2. Memory Acquisition – Lab-safe RAM extraction via reboot, freeze, or imaging
+
+
+3. Analysis – Lab-only memory dump analysis & key extraction
+
+
+4. Post-Exploitation – Access lab encrypted data or simulate decryption
+
+
+5. Remediation Testing – Evaluate effectiveness of memory encryption & wiping
+
+
+
+টেকনিক:
+
+RAM freeze technique (lab-safe)
+
+Cold boot system and quickly extract memory dump
+
+Analyze dump to locate encryption keys or sensitive information
+
+Lab-only simulation of decryption & credential recovery
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – lab VM environment for memory simulation
+
+Physical lab machine with removable RAM (optional)
+
+Memory acquisition tools: Lab-safe cold boot or memory imaging
+
+Forensic analysis: volatility, rekall, or similar lab-safe tools
+
+
+Cold Boot Simulation:
+
+Boot lab system with encrypted volume
+
+Trigger lab-safe cold boot scenario (snapshots or RAM freeze simulation)
+
+Capture memory dump (lab-only)
+
+Analyze dump for lab-safe encryption keys or credentials
+
+Log lab-only findings & evaluate memory protection effectiveness
+
+
+Data Collection & Analysis:
+
+Metrics: Keys recovered, decrypted data, RAM retention duration
+
+Analyze vulnerabilities in lab memory encryption
+
+Visualization: Memory dump layout, key location, access paths
+
+
+Ethical / Legal Considerations:
+
+All memory extraction is lab-simulated or isolated
+
+Licensed/open-source tools only
+
+No extraction from real systems without proper consent
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+WinPMEM / LiME – Lab memory acquisition tools
+
+Volatility / Rekall – Lab memory forensic analysis
+
+Wireshark – Optional lab network memory capture
+
+Binwalk – For lab analysis if firmware involved
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Android Emulator (Android Studio / Genymotion) – Lab memory testing & simulation
+
+Termux – Lab scripting & RAM dump simulation
+
+Kali NetHunter – Lab memory acquisition simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / C – Lab memory parsing & key extraction scripts
+
+SQLite / DB tools – Logging lab memory analysis results
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server with removable RAM modules
+
+Cooling / freeze equipment for RAM retention simulation (lab-only)
+
+USB / SATA adapters for memory dump extraction
+
+Snapshot-enabled VM environment for lab simulation
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1550.002 – RAM Credential Theft
+
+NIST SP 800-101 – Memory Forensics Guidelines
+
+IEEE / ACM Digital Library – Cold Boot Attack research papers
+
+Security blogs / academic papers on DRAM retention and key recovery
+
+

@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Local File Inclusion (LFI) হলো আক্রমণ যেখানে আক্রমণকারী ওয়েব অ্যাপ্লিকেশন এর ইনপুট ভেরিয়েবল বা URL parameter ব্যবহার করে সার্ভারের লোকাল ফাইল অ্যাক্সেস করতে পারে। এটি সাধারণত ওয়েব অ্যাপের অনুপ্রবেশযোগ্য ফাইল পড়ার বা RCE simulation এর জন্য lab এ ব্যবহৃত হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web applications, PHP, Java, Python apps
+
+মূল দুর্বলতা: Unsafe file inclusion via user input
+
+উদ্দেশ্য: Sensitive file disclosure, local configuration read, lab-only RCE simulation
+
+গবেষণার জন্য ব্যবহার: lab simulation, penetration testing, security research
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – Identify file inclusion points (URL parameters, input fields)
+
+
+2. Payload Crafting – lab-only LFI payload creation (e.g., ../../../../etc/passwd)
+
+
+3. Exploitation – Inject payload into lab environment input points
+
+
+4. Actions on Objectives – Read sensitive files, log output, simulate code execution
+
+
+5. Post-Exploitation – Record access success and potential RCE points
+
+
+
+টেকনিক:
+
+Directory traversal (../) sequences
+
+Null byte injection (lab simulation)
+
+Log file inclusion for RCE simulation
+
+Local configuration / credential file read in lab environment
+
+Lab-only shellcode inclusion via LFI
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Web application sandbox (DVWA, WebGoat, custom PHP/Flask app)
+
+Isolated network for LFI testing
+
+
+LFI Simulation:
+
+Identify lab web app input fields vulnerable to file inclusion
+
+Inject payloads such as ../../../../etc/passwd or lab test files
+
+Capture server responses, simulate file disclosure
+
+Log access attempts, success, and output data
+
+
+Data Collection & Analysis:
+
+LFI payload success rate
+
+File read logs and sensitive data simulation
+
+Statistical analysis: response times, exploit success
+
+Visualization: vulnerable endpoints, file access logs
+
+
+Ethical / Legal Considerations:
+
+All files and applications are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Burp Suite – web traffic interception & payload injection
+
+DVWA / WebGoat – lab vulnerable apps
+
+Wireshark – network monitoring for payload responses
+
+Nikto – web application scanning for LFI points
+
+
+Android / Mobile Tools:
+
+Termux – lab scripts & testing
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – lab network testing
+
+
+Software Packages:
+
+Python: requests, selenium, BeautifulSoup (lab payload simulation & scraping)
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & analysis
+
+SQLite / DB tools – logging LFI access results
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / lab devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP LFI Guidelines
+
+NIST SP 800-95 (Guide to Secure Web Services)
+
+MITRE ATT&CK T1158 – Local File Inclusion
+
+IEEE / ACM Digital Library – LFI research papers
+
+

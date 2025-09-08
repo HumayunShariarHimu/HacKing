@@ -1,0 +1,148 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Bootkit Attack হলো ম্যালওয়্যার আক্রমণ যেখানে আক্রমণকারী অপারেটিং সিস্টেমের বুট লোডার বা pre-OS environment পরিবর্তন করে। এটি kernel বা OS load হওয়ার আগে কার্যকর হয়, ফলে ম্যালওয়্যার detection ও removal কঠিন হয়ে পড়ে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Windows, Linux, UEFI/BIOS systems
+
+দুর্বলতা: Unprotected bootloaders, unsigned firmware, lack of Secure Boot
+
+উদ্দেশ্য: Persistent malware, rootkit installation, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab bootloader testing, security research, malware analysis
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target system boot process, firmware version চিহ্নিত করা
+
+
+2. Payload Development – Lab-safe bootkit / pre-OS loader তৈরি করা
+
+
+3. Deployment – Lab VM বা test system-এ bootkit deploy করা
+
+
+4. Execution – Bootkit load & control verification in lab
+
+
+5. Post-Exploitation – Persistence, rootkit behaviour observation, lab logging
+
+
+
+টেকনিক:
+
+BIOS/UEFI firmware modification simulation
+
+Bootloader injection (lab-only)
+
+Master Boot Record (MBR) / Volume Boot Record (VBR) tampering
+
+Kernel or OS loading manipulation
+
+Persistence mechanism testing in lab VM
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware / QEMU – isolated lab VM
+
+Lab OS images (Windows/Linux)
+
+Snapshot-enabled VM for rollback
+
+Debugging environment: WinDbg, gdb, UEFI firmware emulator
+
+
+Bootkit Simulation:
+
+Identify bootloader & lab OS boot sequence
+
+Lab-safe bootkit payload creation
+
+Inject payload in lab VM’s MBR/VBR or UEFI bootloader
+
+Reboot VM and observe lab-only pre-OS code execution
+
+Log persistence behaviour, OS impact, and boot sequence changes
+
+
+Data Collection & Analysis:
+
+Metrics: payload execution success, VM boot stability, rootkit persistence
+
+Analyze bootloader & firmware vulnerabilities
+
+Visualize boot sequence modifications & payload injection points
+
+
+Ethical / Legal Considerations:
+
+All bootkit payloads tested in isolated lab VM
+
+Licensed or lab-safe proof-of-concept only
+
+No attacks on production systems
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+QEMU / VMware / VirtualBox – isolated lab VM testing
+
+UEFITool – UEFI firmware analysis & lab modification
+
+WinDbg / gdb – lab bootloader & kernel debugging
+
+IDA Pro / Ghidra – reverse engineering bootloader code
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Android Emulator (Android Studio / Genymotion) – lab bootloader testing
+
+Termux – lab scripting for boot process analysis
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / C / C++ – lab bootkit payload development
+
+Binwalk – lab firmware extraction & analysis
+
+pwntools – lab payload automation
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+High-performance lab PC for VM hosting
+
+Snapshot-enabled VM environment for rollback
+
+USB debugging interfaces (optional for UEFI lab)
+
+Isolated lab network for controlled testing
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1542 – Boot or Firmware Bootkits
+
+NIST SP 800-147 & 800-155 – BIOS/UEFI security guidelines
+
+OWASP Rootkit & Bootkit Security Research
+
+IEEE / ACM Digital Library – Bootkit attack research papers
+
+

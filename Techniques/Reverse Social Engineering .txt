@@ -1,0 +1,149 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Reverse Social Engineering হলো এমন একটি আক্রমণ যেখানে attacker সরাসরি ভিকটিমকে লক্ষ্য করে না বরং ভিকটিমকে “সমস্যা সমাধানের জন্য” নিজে থেকে attacker-এর কাছে যোগাযোগ করতে বাধ্য করে। মূল লক্ষ্য হলো ভিকটিমকে ভুলভাবে বিশ্বাস করিয়ে confidential information, credentials বা access দেওয়া।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Employees, customers, বা organization users
+
+দুর্বলতা: Human trust, curiosity, lack of verification
+
+উদ্দেশ্য: Lab-only social engineering research, human behavior analysis
+
+গবেষণার জন্য ব্যবহার: Social engineering awareness, security training simulations
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target group বা user behavior চিহ্নিত করা
+
+
+2. Creating a Scenario – Lab-safe “problem” বা situation তৈরি করা
+
+
+3. Positioning – Attacker কে expert বা support staff হিসেবে lab environment-এ প্রদর্শন
+
+
+4. Contact Trigger – ভিকটিমকে lab-safe simulated contact করতে প্রলুব্ধ করা
+
+
+5. Information Collection – ভিকটিমের lab-safe credentials বা data সংগ্রহ
+
+
+6. Analysis & Awareness – Lab results ব্যবহার করে social engineering awareness তৈরি
+
+
+
+টেকনিক:
+
+Fabricated IT support calls or emails (Lab-only)
+
+Fake website/portal posing as helpdesk (Lab-only)
+
+Lab-only fake alerts or issues prompting victim interaction
+
+Behavioral logging of interaction (Lab-only)
+
+Simulation of trust-based information extraction
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual lab environment with simulated users or employees
+
+Snapshot-enabled VMs for safe rollback
+
+Simulated communication channels: Email, chat, phone simulation software
+
+Logging and monitoring tools: Screen capture, chat logs, call logs
+
+Scripting: Python, Bash, or JavaScript for automated lab simulations
+
+
+Reverse Social Engineering Simulation:
+
+Create lab “issue” that appears urgent or important
+
+Position lab attacker as support/expert
+
+Monitor how lab users respond and provide information
+
+Capture responses for analysis without impacting real users
+
+Evaluate effectiveness of social engineering awareness and training
+
+
+Data Collection & Analysis:
+
+Metrics: Number of lab users engaging, information provided, response time
+
+Analyze interaction patterns and trust exploitation techniques
+
+Visualize attack flow: problem creation → victim engagement → data disclosure → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real users targeted
+
+Use only simulated accounts and data
+
+Conduct all tests in isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Metasploit Social Engineering Toolkit (SET) – Lab simulations
+
+Burp Suite / OWASP ZAP – Lab web portal simulation
+
+Email clients & local SMTP server – Lab phishing/alert simulations
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab testing of simulated communication apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: smtplib, requests – Automated lab simulations
+
+JavaScript / Node.js – Lab portal and alert simulation scripting
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server for running simulations and VMs
+
+Isolated lab network for communication simulations
+
+Optional VoIP phone simulator for lab-only calls
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1539 – Steal via Social Engineering
+
+Social Engineering Frameworks – Lab simulation techniques
+
+SANS Institute – Social Engineering Awareness & Lab Exercises
+
+IEEE / ACM Digital Library – Human factor and social engineering research
+
+

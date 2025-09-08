@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Smishing হলো SMS (Short Message Service) এর মাধ্যমে সোশ্যাল ইঞ্জিনিয়ারিং আক্রমণ, যেখানে আক্রমণকারী ভিকটিমকে টেক্সট মেসেজের মাধ্যমে বিভ্রান্ত করে ব্যক্তিগত তথ্য, credential বা আর্থিক তথ্য বের করার চেষ্টা করে।
+
+বৈশিষ্ট্য:
+
+টার্গেটেড এবং পারসোনালাইজড SMS
+
+ডেলিভারি চ্যানেল: মোবাইল SMS, MMS, বা SMS-gateway
+
+উদ্দেশ্য: Credential theft, ব্যাংক/কার্ড তথ্য চুরি, ফান্ড ট্রান্সফার
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, সিকিউরিটি ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – ভিকটিম সম্পর্কিত তথ্য সংগ্রহ (OSINT, সোশ্যাল মিডিয়া, পাবলিক রেকর্ড)
+
+
+2. Pretexting – বিশ্বাসযোগ্য বার্তা বা ভুয়া পরিচয় তৈরি
+
+
+3. Delivery – SMS বা MMS প্রেরণ
+
+
+4. Exploitation – ভিকটিমকে লিঙ্কে ক্লিক করতে বা তথ্য শেয়ার করতে প্ররোচিত করা
+
+
+5. Actions on Objectives – ডেটা সংগ্রহ, লগিং, এবং ল্যাবে সিমুলেশন বিশ্লেষণ
+
+
+
+টেকনিক:
+
+Sender ID spoofing (ল্যাব এমুলেশন)
+
+Shortened / masked URLs
+
+Urgency or threat creation
+
+Personalization based on OSINT
+
+Phishing links or malicious attachments in SMS
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Android Emulator (Android Studio / Genymotion)
+
+SMS gateway simulation (SMSGateway API, Kannel)
+
+Separate isolated network
+
+
+Smishing Campaign Simulation:
+
+Test SMS accounts / virtual numbers
+
+Predefined social engineering scripts for messages
+
+SMS logging & tracking (delivery rate, click-through rate, response rate)
+
+Malicious link / attachment simulation (lab-only)
+
+
+Data Collection & Analysis:
+
+SMS delivery success rate, user response rate
+
+Statistical metrics: precision, recall, F1-score
+
+Visualization: time-based response trends, interaction heatmaps
+
+
+Ethical / Legal Considerations:
+
+Target data সম্পূর্ণ সিমুলেটেড
+
+লাইসেন্সকৃত ওপেন-সোর্স টুলস ব্যবহার
+
+ইন্টারনেট / SMS gateway isolation / sandboxing
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Kannel – Open-source SMS gateway
+
+Gammu / Kalkun – SMS management & testing
+
+Wireshark – Packet capture & network analysis
+
+Metasploitable VM – Lab environment testing
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion)
+
+Kali NetHunter – Mobile security lab
+
+
+Software Packages:
+
+Python: requests, smslib, twilio API (lab simulation)
+
+Nmap – Network analysis
+
+Wireshark – Packet capture
+
+SQLite / DB tools – SMS logging & tracking
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator (Android Studio / Genymotion)
+
+Optional: GSM modem or test SIM for isolated lab testing
+
+Router / Switch testbed for isolated network
+
+
+References / Research Sources:
+
+OWASP Smishing Guidelines
+
+NIST SP 800-115 (Technical Guide to InfoSec Testing)
+
+MITRE ATT&CK T1598 – Phishing via SMS
+
+IEEE / ACM Digital Library – Smishing research papers
+
+

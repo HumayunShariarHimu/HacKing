@@ -1,0 +1,144 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Brute-Force Decryption হলো এক ধরনের ক্রিপ্টোগ্রাফিক আক্রমণ যেখানে আক্রমণকারী সমস্ত সম্ভাব্য কী পরীক্ষা করে এনক্রিপ্টেড তথ্য (ciphertext) এর মূল তথ্য (plaintext) বের করার চেষ্টা করে। এটি মূলত weak, short, বা poorly managed keys এর ক্ষেত্রে কার্যকর।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Encrypted files, messages, passwords, weak key systems
+
+দুর্বলতা: Short key length, predictable encryption, lack of rate-limiting
+
+উদ্দেশ্য: Lab-only plaintext/key recovery, security testing
+
+গবেষণার জন্য ব্যবহার: Lab cryptography analysis, key length evaluation, password strength research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab encrypted data & encryption type চিহ্নিত করা
+
+
+2. Keyspace Definition – Lab-safe key length ও character set নির্ধারণ
+
+
+3. Brute-Force Execution – Automated lab testing of all possible keys
+
+
+4. Plaintext Recovery – Identify correct key & decrypt lab-only ciphertext
+
+
+5. Remediation Testing – Evaluate encryption strength & key management
+
+
+
+টেকনিক:
+
+Keyspace enumeration & iteration
+
+Automated decryption attempts with lab-safe scripts
+
+Hash comparison or ciphertext verification
+
+Lab-only plaintext recovery
+
+Logging & success metrics analysis
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Lab VM with target encrypted data
+
+Scripting environment: Python, C, or Java for brute-force automation
+
+CPU/GPU lab resources for parallel key testing
+
+Logging & analysis environment: CSV / SQLite / lab DB
+
+
+Brute-Force Simulation:
+
+Define lab-safe keyspace (length, characters)
+
+Iteratively attempt decryption using automated scripts
+
+Compare decrypted output with known pattern or checksum
+
+Log attempts & identify correct key for lab-only plaintext recovery
+
+Evaluate encryption strength and lab-safe mitigation strategies
+
+
+Data Collection & Analysis:
+
+Metrics: Number of keys tried, success rate, time to recover plaintext
+
+Analyze encryption algorithm & key length vulnerability
+
+Visualize brute-force attack process: key iteration → decryption → plaintext recovery
+
+
+Ethical / Legal Considerations:
+
+All brute-force attempts conducted in lab-only or simulated environment
+
+No real system attacks without explicit consent
+
+Use licensed or open-source tools only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Hashcat – Lab password / encryption brute-force
+
+John the Ripper – Lab hash / key cracking
+
+PyCrypto / pycryptodome – Lab decryption scripting
+
+GPU acceleration tools (CUDA/OpenCL) – Lab parallel processing
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab testing environment for encrypted messages
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: multiprocessing, itertools – Lab key iteration & automation
+
+SQLite / DB tools – Lab logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server with strong CPU/GPU for parallel key testing
+
+Snapshot-enabled VM for lab-safe experiments
+
+Isolated lab network for safe decryption testing
+
+
+References / Research Sources:
+
+NIST SP 800-57 – Key Management & Security Guidelines
+
+MITRE ATT&CK T1552 – Encrypted Data Exploitation
+
+Hashcat / John the Ripper Documentation – Lab brute-force frameworks
+
+IEEE / ACM Digital Library – Lab cryptography brute-force research papers
+
+

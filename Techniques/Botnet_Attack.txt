@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Botnet Attack হলো একটি আক্রমণ যেখানে আক্রমণকারী IoT, কম্পিউটার বা নেটওয়ার্ক ডিভাইসগুলো দূর থেকে নিয়ন্ত্রণ করে, সাধারণত ডিস্ট্রিবিউটেড ডিনায়াল অফ সার্ভিস (DDoS) বা ম্যালওয়্যার প্রসারের জন্য।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: IoT ডিভাইস, কম্পিউটার, রাউটার
+
+মূল উদ্দেশ্য: DDoS, Spam, Credential theft, Cryptocurrency mining
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – IoT ডিভাইস এবং নেটওয়ার্ক এর তথ্য সংগ্রহ
+
+
+2. Exploit Vulnerabilities – lab simulation, misconfigured devices or weak passwords
+
+
+3. Bot Installation – lab-only controlled malware deployment
+
+
+4. Command & Control – lab-based C2 server simulation
+
+
+5. Actions on Objectives – lab-simulated DDoS, data exfiltration, network monitoring
+
+
+
+টেকনিক:
+
+Default credentials exploitation
+
+Firmware vulnerability exploitation (lab simulation)
+
+Remote code execution (lab-only)
+
+C2 server communication
+
+Network scanning & propagation (lab environment)
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+IoT simulator / emulated devices
+
+Isolated network for lab testing
+
+
+Botnet Simulation:
+
+Deploy lab C2 server (Metasploit or custom Python C2)
+
+Connect emulated IoT devices as “bots”
+
+Simulate attack commands (DDoS, ping flood, simulated mining)
+
+Log bot activity and C2 responses
+
+
+Data Collection & Analysis:
+
+Bot connection success rate
+
+Command execution metrics
+
+Statistical analysis: latency, traffic volume, bot uptime
+
+Visualization: botnet network map, traffic timeline
+
+
+Ethical / Legal Considerations:
+
+All devices and networks are lab-simulated
+
+No real-world IoT devices targeted
+
+Licensed/open-source tools only
+
+Network isolation
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Metasploit – lab C2 server simulation
+
+Cuckoo Sandbox – malware analysis
+
+Wireshark – network traffic capture & analysis
+
+IoT simulators – GNS3, Cooja (for lab IoT devices)
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion)
+
+Kali NetHunter – lab testing & IoT simulation
+
+
+Software Packages:
+
+Python: requests, socket, threading, asyncio (C2 simulation)
+
+Nmap – IoT device scanning
+
+Wireshark – packet capture & traffic analysis
+
+SQLite / DB tools – logging bot activity
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / lab IoT devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP IoT Security Guidelines
+
+NIST SP 800-183 (Guide to Botnets)
+
+MITRE ATT&CK T1584 – Botnet
+
+IEEE / ACM Digital Library – Botnet & IoT research papers
+
+

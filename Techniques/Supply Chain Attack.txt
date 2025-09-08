@@ -1,0 +1,151 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Supply Chain Attack হলো এমন একটি আক্রমণ যেখানে attacker legitimate software বা development pipeline এ ম্যালওয়্যার ইনজেক্ট করে। যখন ব্যবহারকারী বা organization সফটওয়্যারটি ব্যবহার করে, তখন ম্যালওয়্যার সক্রিয় হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Software vendors, CI/CD pipelines, package repositories
+
+দুর্বলতা: Unverified dependencies, insecure build environments, outdated toolchains
+
+উদ্দেশ্য: Lab-only malware injection simulation, software integrity research
+
+গবেষণার জন্য ব্যবহার: Supply chain risk assessment, secure development practices testing
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab software supply chain components চিহ্নিত করা
+
+
+2. Injection Point Identification – Lab-safe CI/CD pipeline বা build scripts চিহ্নিত করা
+
+
+3. Payload Injection – Lab-only malware embed in lab software build
+
+
+4. Delivery – Deploy lab software to lab VM or isolated environment
+
+
+5. Execution – Trigger lab-only malware during lab software execution
+
+
+6. Detection & Mitigation Testing – Evaluate pipeline monitoring & software integrity tools
+
+
+
+টেকনিক:
+
+Tampering with dependencies (Lab-only npm, pip packages)
+
+Compromised build scripts or binaries
+
+Post-build malware injection in isolated lab
+
+Analysis of software signing & verification mechanisms
+
+Lab-only logging of software behavior
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual Machines for build environment and test systems
+
+Snapshot-enabled lab VM for rollback & safe testing
+
+Lab-safe software projects & packages
+
+CI/CD tools: Jenkins, GitLab CI, GitHub Actions (Lab-only)
+
+Monitoring: Process logging, file integrity check, network monitoring
+
+
+Supply Chain Attack Simulation:
+
+Introduce lab-safe malware into lab build pipeline (scripts or dependencies)
+
+Build and deploy lab software to lab VM
+
+Execute lab software and monitor for lab-only malware activation
+
+Capture logs, network activity, and file changes for analysis
+
+Evaluate effectiveness of software integrity checks and detection mechanisms
+
+
+Data Collection & Analysis:
+
+Metrics: Malware activation success, detection rate, pipeline vulnerabilities
+
+Analyze injection points and mitigation strategies
+
+Visualize attack flow: dependency compromise → build pipeline → software deployment → execution → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no attacks on public or production pipelines
+
+Use only licensed/open-source software and lab-safe malware
+
+Conduct all experiments in isolated environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Jenkins / GitLab CI / GitHub Actions – Lab CI/CD simulation
+
+Git / Mercurial – Version control for lab projects
+
+Sysdig / Falco – Lab process and container monitoring
+
+Wireshark / tcpdump – Lab network monitoring
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & pipeline automation
+
+Android Emulator – Lab testing of mobile software pipelines
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python / Bash / PowerShell – Lab-only malware scripting & build automation
+
+Node.js / npm, pip – Lab-safe dependency manipulation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab server or PC capable of running CI/CD pipelines and multiple VMs
+
+Isolated lab network for safe build and deployment
+
+Snapshot-enabled VMs for rollback and safe experimentation
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1195 – Supply Chain Compromise
+
+OWASP Software Supply Chain Security
+
+SANS Institute – Software supply chain risk assessment
+
+IEEE / ACM Digital Library – Research on supply chain attacks and mitigation
+
+

@@ -1,0 +1,142 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+SIM Swap Attack হলো এমন আক্রমণ যেখানে attacker victim-এর mobile number-এর control নেয়। এর মাধ্যমে তারা OTP, 2FA codes, ও sensitive messages গ্রহণ করতে পারে। মূল লক্ষ্য হলো financial fraud বা account takeover।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Individuals with banking apps, crypto accounts, online services
+
+দুর্বলতা: Mobile operator processes, human error, weak verification
+
+উদ্দেশ্য: Lab-only security research, SIM vulnerability testing
+
+গবেষণার জন্য ব্যবহার: Awareness & preventive security study
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target এর mobile number, personal info, telecom provider চিহ্নিত করা
+
+
+2. Social Engineering – Lab-safe simulated SIM provider posing
+
+
+3. SIM Swap Execution – Lab-only simulation to test SMS/OTP forwarding
+
+
+4. Information Capture – Lab-safe OTP or message collection
+
+
+5. Analysis – Vulnerabilities & procedural weaknesses logging
+
+
+
+টেকনিক:
+
+Social engineering telecom support staff (Lab-only)
+
+Fake ID or account verification (Lab simulation)
+
+Forwarding SMS or OTP to lab-controlled number
+
+Logging interaction and effectiveness in lab
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual lab environment with simulated mobile network
+
+Lab-safe user accounts & mobile numbers
+
+Simulated telecom provider support system
+
+Logging tools for OTP or code capture
+
+Scripting: Python, Node.js, or Android automation tools
+
+
+SIM Swap Simulation:
+
+Create lab-safe victim profile with mobile number
+
+Position lab attacker as telecom support staff
+
+Simulate SIM swap request and OTP forwarding
+
+Capture lab-safe OTPs or codes for analysis
+
+Evaluate procedural weaknesses and human factor vulnerabilities
+
+
+Data Collection & Analysis:
+
+Metrics: Success rate of lab swap, response time, OTP capture effectiveness
+
+Analyze social engineering susceptibility and telecom verification flaws
+
+Visualize attack flow: reconnaissance → lab impersonation → SIM swap simulation → OTP capture → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real users or mobile numbers targeted
+
+Use only simulated telecom environment and lab-safe data
+
+Conduct all tests in isolated lab network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Social Engineering Toolkit (SET) – Lab-only telecom impersonation campaigns
+
+Burp Suite / OWASP ZAP – Simulated portal or telecom interface testing
+
+Lab email/CRM server – Fake verification & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab OTP/code reception simulation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: smtplib, requests – Automated lab messaging
+
+Node.js / JavaScript – Lab portal & messaging simulation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server for running simulations & VMs
+
+Optional mobile emulator devices for lab-only OTP reception
+
+Isolated lab network for safe testing
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1530 – Account Takeover via SIM Swap
+
+SANS Institute – Mobile security & SIM attack lab exercises
+
+IEEE / ACM Digital Library – SIM swap attack simulation research
+
+

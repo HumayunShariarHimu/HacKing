@@ -1,0 +1,142 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Impersonation Attack হলো এমন একটি আক্রমণ যেখানে attacker অন্য কারো পরিচয় ব্যবহার করে ভিকটিম বা organization-এর বিশ্বাস অর্জন করে confidential information, credentials বা sensitive data চুরি করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Employees, customers, executives
+
+দুর্বলতা: Human trust, verification failure, curiosity
+
+উদ্দেশ্য: Lab-only social engineering research, identity-based attack analysis
+
+গবেষণার জন্য ব্যবহার: Security awareness, impersonation scenario simulation
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target persona বা organization structure চিহ্নিত করা
+
+
+2. Identity Fabrication – Lab-safe persona বা credentials তৈরি করা
+
+
+3. Engagement – Lab-only social interaction যেমন email, phone, chat
+
+
+4. Information Extraction – Lab-safe sensitive data collection
+
+
+5. Logging & Analysis – Interaction behavior এবং attack effectiveness capture
+
+
+
+টেকনিক:
+
+Lab-safe email, chat, বা phone calls posing as trusted personnel
+
+Fake lab identities: employees, support staff, or executives
+
+Prompting lab targets to share sensitive info
+
+Behavioral logging in lab environment
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Virtual lab environment with simulated users
+
+Snapshot-enabled VMs for safe rollback
+
+Simulated communication channels: Email, VoIP, chat apps
+
+Logging tools: Screen capture, chat/email logs
+
+Scripting: Python, Node.js, or JavaScript for automated lab impersonation
+
+
+Impersonation Simulation:
+
+Create lab-safe identity mimicking a trusted person
+
+Engage simulated targets in lab environment
+
+Request lab-only credentials or sensitive information
+
+Capture responses and interaction patterns
+
+Evaluate human factor vulnerabilities and awareness
+
+
+Data Collection & Analysis:
+
+Metrics: Engagement success rate, info disclosure, response time
+
+Analyze trust exploitation techniques
+
+Visualize attack flow: identity fabrication → victim engagement → data disclosure → logging
+
+
+Ethical / Legal Considerations:
+
+Lab-only experiments; no real users targeted
+
+Use only simulated accounts and lab-safe data
+
+Conduct all tests in isolated lab environment
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Social Engineering Toolkit (SET) – Lab-only impersonation campaigns
+
+Burp Suite / OWASP ZAP – Lab portal simulation
+
+Lab email server – Simulated delivery & logging
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & automation
+
+Android Emulator – Lab testing of email/chat apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: smtplib, requests – Automated lab email/message delivery
+
+Node.js / JavaScript – Lab portal & message simulation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server for running simulations & VMs
+
+Isolated lab network for safe testing
+
+Optional VoIP or messaging simulators for lab-only interaction
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1491 – Impersonation Techniques
+
+SANS Institute – Identity-based social engineering labs
+
+IEEE / ACM Digital Library – Impersonation attack research & human factor studies
+
+

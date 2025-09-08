@@ -1,0 +1,152 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Side-Channel Attack হলো আক্রমণ যেখানে সিস্টেমের হ্যাডওয়্যার বা operation behavior থেকে sensitive তথ্য বের করা হয়। এটি সরাসরি সফটওয়্যার বা network vulnerability exploit না করে hardware signals, timing, power consumption, EM emissions ইত্যাদি বিশ্লেষণ করে করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: CPUs, smartcards, embedded systems, IoT devices
+
+দুর্বলতা: Timing variations, power usage patterns, EM emissions, cache behavior
+
+উদ্দেশ্য: Cryptographic key recovery, sensitive data leakage, lab-only simulation
+
+গবেষণার জন্য ব্যবহার: lab hardware analysis, side-channel vulnerability testing, cryptography research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab target hardware এবং attack vector চিহ্নিত করা
+
+
+2. Measurement – Lab-only timing, power, EM, cache metrics সংগ্রহ করা
+
+
+3. Analysis – Collected data থেকে sensitive info বের করার algorithm বা pattern analysis
+
+
+4. Exploitation – Lab-only sensitive data recovery simulation
+
+
+5. Remediation Testing – Evaluate hardware/software mitigations effectiveness
+
+
+
+টেকনিক:
+
+Timing attacks: operation execution time measurement
+
+Power analysis (Simple Power Analysis – SPA, Differential Power Analysis – DPA)
+
+Electromagnetic (EM) side-channel measurement
+
+Cache-based attacks (Flush+Reload, Prime+Probe)
+
+Lab-only cryptographic key recovery simulation
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Isolated lab environment with target hardware (CPU, smartcard, IoT device)
+
+Measurement devices: Oscilloscope, EM probes, power monitors
+
+VM for cryptographic operation simulation
+
+Snapshot-enabled VM or lab hardware rollback
+
+
+Side-Channel Simulation:
+
+Lab hardware operation while measuring side-channel signals (timing, power, EM)
+
+Collect lab-safe traces & metrics
+
+Analyze collected traces using statistical or algorithmic methods
+
+Simulate sensitive data extraction in lab-only environment
+
+Log and visualize extracted patterns & vulnerabilities
+
+
+Data Collection & Analysis:
+
+Metrics: Signal-to-noise ratio, number of traces required, key recovery success
+
+Analyze cryptographic algorithm or hardware design vulnerabilities
+
+Visualize attack process: signal acquisition → analysis → key recovery
+
+
+Ethical / Legal Considerations:
+
+All attacks conducted on lab hardware or simulated targets
+
+No attacks on production systems without consent
+
+Use licensed or open-source analysis tools only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+ChipWhisperer – lab side-channel measurement & analysis
+
+Riscure Inspector – lab cryptographic side-channel testing
+
+Python / Matlab / R – statistical analysis & simulation
+
+Wireshark – optional for lab network side-channel study
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – lab-side scripting for timing or cache analysis
+
+Android Emulator – lab cryptography side-channel simulation
+
+Kali NetHunter – optional lab measurement & analysis
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: numpy, scipy, scikit-learn – signal processing & analysis
+
+ChipWhisperer CW-Lab tools – lab-side cryptographic key extraction
+
+SQLite / DB tools – log lab measurement & analysis results
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab CPU / embedded device / smartcard
+
+Oscilloscope, power monitor, EM probe
+
+FPGA / microcontroller for lab simulation
+
+Snapshot-enabled VM for safe lab cryptography simulation
+
+Shielded lab environment for EM measurement
+
+
+References / Research Sources:
+
+MITRE ATT&CK T1202 – Side-channel Vulnerabilities
+
+NIST SP 800-57, SP 800-90 – Cryptographic Hardware Security Guidelines
+
+IEEE / ACM Digital Library – Side-channel attack research papers
+
+ChipWhisperer project documentation – lab hardware side-channel experiments
+
+

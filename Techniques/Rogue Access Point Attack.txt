@@ -1,0 +1,152 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Rogue Access Point Attack হলো আক্রমণ যেখানে আক্রমণকারী ভুয়া বা unauthorized Wi-Fi Access Point তৈরি করে unsuspecting users বা devices-কে সংযুক্ত করে। এর মাধ্যমে আক্রমণকারী network traffic capture, credential harvesting, বা MITM (Man-in-the-Middle) করতে পারে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Wireless networks, public Wi-Fi users, corporate networks
+
+দুর্বলতা: Weak Wi-Fi authentication, unencrypted traffic, lack of network monitoring
+
+উদ্দেশ্য: Data capture, session hijacking, lab-only exploitation
+
+গবেষণার জন্য ব্যবহার: lab network simulation, penetration testing, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Target wireless network and clients চিহ্নিত করা
+
+
+2. Rogue AP Deployment – Lab-only fake Access Point তৈরি করা
+
+
+3. Client Luring – Lab devices কে rogue AP-তে connect করা
+
+
+4. Traffic Capture & Analysis – Lab-only sniffing ও MITM simulation
+
+
+5. Post-Exploitation – Log captured data, evaluate vulnerabilities
+
+
+
+টেকনিক:
+
+Fake SSID broadcasting using lab AP
+
+Deauthentication attack to force clients onto rogue AP (lab-only)
+
+DNS / HTTP / HTTPS traffic sniffing
+
+MITM payload injection in lab environment
+
+Credential or session token capture simulation
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Lab Wi-Fi AP (physical or virtual)
+
+Lab client devices for connecting to rogue AP
+
+Isolated network for safe testing
+
+
+Rogue AP Simulation:
+
+Create fake SSID and configure lab AP
+
+Connect lab clients to rogue AP
+
+Capture and analyze lab network traffic using sniffing tools
+
+Simulate MITM attacks (DNS spoofing, HTTP injection)
+
+Log lab-only credential or session token capture
+
+
+Data Collection & Analysis:
+
+Metrics: number of lab devices connected, captured packets
+
+Analyze traffic types: HTTP, DNS, HTTPS metadata
+
+Visualization: lab network map, client connections, captured data flow
+
+
+Ethical / Legal Considerations:
+
+সব AP, clients এবং traffic lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Aircrack-ng suite – lab AP creation, deauth simulation
+
+Wireshark – packet capture & analysis
+
+Bettercap – lab MITM simulation
+
+Hostapd – rogue AP setup in lab
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Kali NetHunter – lab rogue AP & MITM testing
+
+Termux – network scripts for simulation
+
+Android Emulator (Android Studio / Genymotion) – lab testing
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: scapy (packet sniffing & lab MITM), requests (traffic simulation)
+
+Nmap – network & service scanning
+
+SQLite / DB tools – logging captured packets
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+VirtualBox / VMware / Proxmox
+
+Wireless network adapter supporting monitor mode & packet injection
+
+Router / Switch testbed for isolated lab network
+
+Lab client devices (PCs, phones, emulators)
+
+
+References / Research Sources:
+
+OWASP Wireless Security Guidelines
+
+NIST SP 800-153 (Guidelines for Securing Wireless Networks)
+
+MITRE ATT&CK T1583 – Wireless Access Point Attack
+
+IEEE / ACM Digital Library – Rogue AP / Wi-Fi attacks research papers
+
+

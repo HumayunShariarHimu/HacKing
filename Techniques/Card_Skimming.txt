@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Card Skimming হলো একটি ক্রেডিট/ডেবিট কার্ডের তথ্য চুরি করার আক্রমণ, যেখানে আক্রমণকারী ATM, POS বা কার্ড রিডারের উপরে স্কিমিং ডিভাইস ব্যবহার করে কার্ডের মেগনেটিক স্ট্রিপের তথ্য বা PIN সংগ্রহ করে।
+
+বৈশিষ্ট্য:
+
+ATM বা POS টার্মিনাল লক্ষ্য
+
+কার্ডের মেগনেটিক স্ট্রিপ বা EMV চিপ থেকে তথ্য চুরি
+
+উদ্দেশ্য: Credential theft, fraudulent transactions
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – টার্গেট ATM/POS এবং চার্জিং environment এর তথ্য সংগ্রহ
+
+
+2. Skimmer Setup – lab-simulated skimming device attach করা
+
+
+3. Data Capture – কার্ড মেগনেটিক স্ট্রিপের তথ্য সিমুলেটেড লগিং
+
+
+4. PIN Collection – keypad overlay বা simulation
+
+
+5. Analysis – collected data evaluation, security testing
+
+
+
+টেকনিক:
+
+Magnetic stripe reading simulation
+
+PIN entry capture simulation
+
+Overlay devices for keypad simulation
+
+EMV card reader simulation
+
+Data exfiltration simulation
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Card reader simulator (magnetic stripe / EMV)
+
+Android Emulator (Android Studio / Genymotion)
+
+Isolated network for data logging
+
+
+Skimming Simulation:
+
+Attach simulated skimmer device to lab card reader
+
+Test cards in lab environment
+
+Log swipe and PIN entry in VM or emulator
+
+Analyze success rate and collected data
+
+
+Data Collection & Analysis:
+
+Swipe success rate, data capture metrics
+
+Statistical analysis: data integrity, collection rate
+
+Visualization: timeline of card interactions, data logs
+
+
+Ethical / Legal Considerations:
+
+All cards and devices are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+ATM / POS simulator software
+
+Wireshark – network monitoring & packet capture
+
+Metasploitable VM – lab environment
+
+Card reader emulators (MagTek, Omnikey)
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion)
+
+Kali NetHunter – mobile security lab
+
+
+Software Packages:
+
+Python: logging, requests, encryption/decryption simulation
+
+Nmap – network analysis
+
+Wireshark – packet capture & analysis
+
+SQLite / DB tools – logging simulated card data
+
+
+Hardware / Lab Setup:
+
+Card reader emulator (magnetic stripe / EMV)
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / test devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP Payment Security Guidelines
+
+NIST SP 800-115 (Technical Guide to InfoSec Testing)
+
+MITRE ATT&CK T1559 – Data from Information Repositories (Card Data)
+
+IEEE / ACM Digital Library – Card Skimming research papers
+
+

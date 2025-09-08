@@ -1,0 +1,150 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Vishing হলো ভয়েস কলের মাধ্যমে সোশ্যাল ইঞ্জিনিয়ারিং আক্রমণ, যেখানে আক্রমণকারী ভিকটিমকে ফোনে বিভ্রান্ত করে ব্যক্তিগত তথ্য, credential বা আর্থিক তথ্য বের করার চেষ্টা করে।
+
+বৈশিষ্ট্য:
+
+টার্গেটেড এবং পারসোনালাইজড কল
+
+ডেলিভারি চ্যানেল: ফোন কল, VoIP, Internet telephony
+
+উদ্দেশ্য: Credential theft, ব্যাংক/কার্ড তথ্য চুরি, ফান্ড ট্রান্সফার
+
+গবেষণার জন্য ব্যবহার: সিমুলেশন, সিকিউরিটি ট্রেনিং, এডুকেশনাল প্র্যাকটিস
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – ভিকটিম সম্পর্কিত তথ্য সংগ্রহ (OSINT, সোশ্যাল মিডিয়া, পাবলিক রেকর্ড)
+
+
+2. Pretexting – বিশ্বাসযোগ্য গল্প বা ভুয়া পরিচয় তৈরি
+
+
+3. Delivery – ফোন কল বা VoIP ব্যবহার করে বার্তা প্রেরণ
+
+
+4. Exploitation – ভিকটিমকে তথ্য প্রকাশ বা credential শেয়ার করতে প্ররোচিত করা
+
+
+5. Actions on Objectives – ডেটা সংগ্রহ, লগিং, এবং ল্যাবে সিমুলেশন বিশ্লেষণ
+
+
+
+টেকনিক:
+
+Caller ID spoofing (ল্যাব এমুলেশন)
+
+Impersonation (ব্যাংক কর্মকর্তা, সাপোর্ট স্টাফ)
+
+Urgency or threat creation
+
+Social engineering scripts
+
+Voicemail baiting / callback triggers
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+VoIP server simulation (Asterisk, FreePBX)
+
+Android Emulator (Android Studio / Genymotion)
+
+Separate isolated network
+
+
+Vishing Campaign Simulation:
+
+Test VoIP accounts / softphones
+
+Predefined social engineering scripts
+
+Call logging & tracking (call duration, response, compliance)
+
+Voice recording & analysis (ethical, lab-only)
+
+
+Data Collection & Analysis:
+
+Call success rate, response rate, information disclosure metrics
+
+Statistical analysis: precision, recall, F1-score
+
+Visualization: call timeline trends, interaction heatmaps
+
+
+Ethical / Legal Considerations:
+
+Target data সম্পূর্ণ সিমুলেটেড
+
+লাইসেন্সকৃত ওপেন-সোর্স টুলস ব্যবহার
+
+ইন্টারনেট / VoIP isolation / sandboxing
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Asterisk – Open-source VoIP server
+
+FreePBX – VoIP PBX management
+
+Wireshark – VoIP packet capture & analysis
+
+Metasploitable VM – lab environment testing
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Zoiper / Linphone – Softphone apps for simulation
+
+Kali NetHunter – Mobile security lab
+
+
+Software Packages:
+
+Python: pjsua, Twilio API (lab simulation), speech recognition libraries
+
+Nmap – network analysis
+
+Wireshark – packet capture
+
+Audacity – voice recording analysis
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator (Android Studio / Genymotion)
+
+Optional: SIP phones / softphones for lab testing
+
+Router / Switch testbed for isolated network
+
+
+References / Research Sources:
+
+OWASP Vishing Guidelines
+
+NIST SP 800-115 (Technical Guide to InfoSec Testing)
+
+MITRE ATT&CK T1471 – Information from Telephony
+
+IEEE / ACM Digital Library – Vishing research papers
+
+

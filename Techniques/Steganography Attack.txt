@@ -1,0 +1,145 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Steganography Attack হলো একটি আক্রমণ যেখানে তথ্য বা ম্যালওয়্যারকে লুকানো হয় সাধারণ ফাইলের (image, audio, video) ভিতরে। Victim unsuspecting file open করলে বা process করলে গোপন তথ্য বা payload এক্সেস করা যায়। এটি cryptography-এর সাথে মিশিয়ে আরও নিরাপদভাবে ব্যবহার করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Images (JPEG, PNG), Audio (MP3, WAV), Video (MP4)
+
+দুর্বলতা: Lack of steganalysis, unmonitored file sharing
+
+উদ্দেশ্য: Lab-only hidden data/payload delivery, covert communication simulation
+
+গবেষণার জন্য ব্যবহার: Steganalysis, information hiding detection, security research
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab-safe carrier file চিহ্নিত করা
+
+
+2. Payload Embedding – Secret information / lab-safe payload embed করা
+
+
+3. Delivery – Lab environment এ file deliver করা
+
+
+4. Extraction – Lab-only extraction of hidden data
+
+
+5. Analysis – Evaluate hiding efficiency, detectability
+
+
+6. Remediation Testing – Steganalysis tool effectiveness evaluation
+
+
+
+টেকনিক:
+
+LSB (Least Significant Bit) embedding for images
+
+Masking & filtering techniques
+
+Transform domain techniques (DCT, DWT)
+
+Lab-only extraction & logging
+
+Analysis of detection resistance
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+VM or lab PC for file manipulation
+
+Lab-safe payload/data for embedding
+
+Tools: Python scripts, image/audio/video processing libraries
+
+Logging & analysis: Capture extraction success, distortion metrics
+
+
+Steganography Simulation:
+
+Embed lab-safe payload into image/audio/video using LSB or transform domain techniques
+
+Deliver lab file to another lab VM for extraction
+
+Extract hidden payload and log results
+
+Evaluate detectability using steganalysis tools
+
+Test multiple embedding methods and formats
+
+
+Data Collection & Analysis:
+
+Metrics: Payload size vs detectability, extraction success rate
+
+Analyze file distortion & steganalysis detection efficiency
+
+Visualize attack flow: payload embedding → delivery → extraction → analysis
+
+
+Ethical / Legal Considerations:
+
+Experiments conducted in isolated lab environment only
+
+Use only lab-safe payloads and licensed/open-source tools
+
+No hidden data delivery on real users or networks
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Steghide – Lab-safe embedding/extraction
+
+OpenStego – Image-based lab payload embedding
+
+OutGuess – Lab-only payload embedding in images
+
+GIMP / Photoshop – Visual steganography simulation
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Stegosuite / Steghide Android ports – Lab testing
+
+Termux – Lab scripting & automation
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: Pillow, OpenCV, wave, moviepy – Lab-safe steganography simulation
+
+SQLite / DB tools – Logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server capable of handling multimedia processing
+
+Snapshot-enabled VM for safe extraction & rollback
+
+Optional secondary monitoring machine for file behavior capture
+
+
+References / Research Sources:
+
+Johnson, N.F., Duric, Z., & Jajodia, S., “Information Hiding: Steganography & Watermarking”
+
+IEEE / ACM Digital Library – Steganography & steganalysis research papers
+
+OWASP Steganography Awareness – Lab-safe reference
+
+

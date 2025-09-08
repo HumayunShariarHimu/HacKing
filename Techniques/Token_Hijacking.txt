@@ -1,0 +1,149 @@
+1️⃣ Information
+
+সংজ্ঞা:
+Token Hijacking হলো আক্রমণ যেখানে আক্রমণকারী ইউজারের অথেনটিকেশন টোকেন চুরি করে এবং ভিকটিমের পরিচয়ে সিস্টেম বা সার্ভিসে unauthorized access পায়। এটি session hijacking বা API token exploitation এর মতো কাজ করে।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Web applications, APIs, SaaS, Mobile apps
+
+Credential knowledge ছাড়া access
+
+উদ্দেশ্য: Unauthorized access, privilege escalation, data theft
+
+গবেষণার জন্য ব্যবহার: lab simulation, penetration testing, security research
+
+
+ধাপসমূহ (Attack Lifecycle – গবেষণার দৃষ্টিকোণ)
+
+1. Reconnaissance – Target system & token management observation
+
+
+2. Token Capture – lab simulation via sniffing, MITM, or XSS
+
+
+3. Exploitation – lab-only hijacking using captured token
+
+
+4. Actions on Objectives – resource access, session replay, logging
+
+
+
+টেকনিক:
+
+HTTP header manipulation / cookie theft
+
+Man-in-the-Middle (MITM) lab simulation
+
+Cross-Site Scripting (XSS) for token capture
+
+Session replay or token reuse simulation
+
+API token exploitation in lab environment
+
+
+
+---
+
+2️⃣ Method
+
+Lab Setup:
+
+VirtualBox / VMware – isolated lab VM
+
+Kali Linux / Ubuntu VM
+
+Web application sandbox with test tokens (DVWA, WebGoat)
+
+Android Emulator (Android Studio / Genymotion)
+
+Isolated network for sniffing & MITM simulation
+
+
+Token Hijacking Simulation:
+
+Configure lab web app or API with test authentication tokens
+
+Intercept tokens via lab MITM or XSS simulation
+
+Replay tokens to access lab resources
+
+Log all token usage, access attempts, and exploit success
+
+
+Data Collection & Analysis:
+
+Token capture success rate
+
+Unauthorized access metrics
+
+Statistical analysis: token reuse, hijack success
+
+Visualization: token usage timelines, access logs
+
+
+Ethical / Legal Considerations:
+
+All tokens, accounts, and applications are lab-simulated
+
+Licensed/open-source tools only
+
+Sandbox / isolated network
+
+
+
+---
+
+3️⃣ Tools
+
+Computer Tools:
+
+Burp Suite – web traffic interception & token testing
+
+DVWA / WebGoat – vulnerable web apps with tokens
+
+Wireshark – packet capture & analysis
+
+Bettercap – MITM simulation for token capture
+
+
+Android / Mobile Tools:
+
+Termux – Linux packages & scripts
+
+Android Emulator (Android Studio / Genymotion) – lab simulation
+
+Kali NetHunter – lab testing & network monitoring
+
+
+Software Packages:
+
+Python: requests, selenium, http.cookies, pyjwt (token simulation & replay)
+
+Nmap – network & service scanning
+
+Wireshark – packet capture & traffic analysis
+
+SQLite / DB tools – logging token activity
+
+
+Hardware / Lab Setup:
+
+VirtualBox / VMware / Proxmox
+
+Android Emulator / lab devices
+
+Router / Switch testbed for isolated lab network
+
+
+References / Research Sources:
+
+OWASP Authentication & Session Management Guidelines
+
+NIST SP 800-63B (Digital Identity Guidelines)
+
+MITRE ATT&CK T1539 – Steal Web Session Cookie / Token Hijacking
+
+IEEE / ACM Digital Library – Token Hijacking research papers
+
+

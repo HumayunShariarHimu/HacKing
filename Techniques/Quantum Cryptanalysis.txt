@@ -1,0 +1,148 @@
+1️⃣ তথ্য (Information)
+
+সংজ্ঞা:
+Quantum Cryptanalysis হলো ক্রিপ্টোগ্রাফিক আক্রমণের একটি ধরন যেখানে কোয়ান্টাম কম্পিউটিং ব্যবহার করে classical cryptographic algorithms (যেমন RSA, ECC, AES) কে ব্রেক করা হয়। কোয়ান্টাম কম্পিউটার শাফেল্ড algorithms যেমন Shor’s algorithm ও Grover’s algorithm ব্যবহার করে এটি করা হয়।
+
+বৈশিষ্ট্য:
+
+লক্ষ্য: Public-key cryptography (RSA, ECC), symmetric-key systems (AES, 3DES)
+
+দুর্বলতা: Classical key lengths যেগুলো quantum attack-resistant নয়
+
+উদ্দেশ্য: Lab-only cryptanalysis, encryption research, post-quantum security evaluation
+
+গবেষণার জন্য ব্যবহার: Quantum-safe encryption evaluation, lab simulation of quantum attacks
+
+
+Attack Lifecycle:
+
+1. Reconnaissance – Lab target encryption & key size চিহ্নিত করা
+
+
+2. Algorithm Selection – Shor’s (factoring) or Grover’s (symmetric brute-force)
+
+
+3. Quantum Simulation – Lab-safe quantum algorithm simulation using frameworks
+
+
+4. Key/Plaintext Recovery – Analyze lab simulation results
+
+
+5. Remediation Testing – Evaluate post-quantum cryptography & key length
+
+
+
+টেকনিক:
+
+Shor’s algorithm – Lab-safe factoring of RSA moduli
+
+Grover’s algorithm – Lab-safe brute-force speedup for symmetric keys
+
+Quantum circuit simulation & analysis
+
+Lab-only key recovery & plaintext reconstruction
+
+Logging & evaluation of encryption vulnerabilities
+
+
+
+---
+
+2️⃣ পদ্ধতি (Method)
+
+Lab Setup:
+
+Quantum computing simulation environment (Qiskit, Cirq)
+
+Lab VM with classical encryption targets
+
+Scripting environment: Python (Qiskit / Cirq)
+
+Logging & analysis: CSV / SQLite / Lab DB
+
+Snapshot-enabled VM for rollback & safety
+
+
+Quantum Cryptanalysis Simulation:
+
+Encode lab-safe encryption problem into quantum circuit
+
+Apply Shor’s algorithm (for RSA) or Grover’s algorithm (for symmetric keys)
+
+Run simulation on quantum simulator (IBM Qiskit, Google Cirq)
+
+Collect lab-only key/plaintext recovery results
+
+Evaluate encryption strength & quantum resistance
+
+
+Data Collection & Analysis:
+
+Metrics: Number of qubits, circuit depth, runtime, key recovery success
+
+Analyze classical vs quantum attack efficiency
+
+Visualize quantum attack process: circuit → measurement → plaintext/key recovery
+
+
+Ethical / Legal Considerations:
+
+All quantum attacks performed on lab-only or simulated data
+
+No attacks on real systems without consent
+
+Use licensed/open-source quantum computing frameworks only
+
+
+
+---
+
+3️⃣ টুলস (Tools)
+
+কম্পিউটার টুলস:
+
+Qiskit (IBM) – Quantum algorithm simulation
+
+Cirq (Google) – Quantum circuit simulation & analysis
+
+ProjectQ – Lab quantum cryptanalysis framework
+
+Python – Scripting & simulation automation
+
+
+অ্যান্ড্রয়েড / মোবাইল টুলস:
+
+Termux – Lab scripting & logging
+
+Android Emulator – Optional simulation interface for lab encryption apps
+
+
+সফটওয়্যার প্যাকেজ:
+
+Python: numpy, qiskit, cirq – Quantum algorithm implementation
+
+SQLite / DB tools – Lab logging & analysis
+
+
+হার্ডওয়্যার / ল্যাব সেটআপ:
+
+Lab PC or server capable of running quantum simulators
+
+Optional GPU for accelerated simulation
+
+Snapshot-enabled VM for safe experiments
+
+Isolated lab environment for encryption testing
+
+
+References / Research Sources:
+
+Shor, P.W., “Algorithms for Quantum Computation: Discrete Log and Factoring” – Original Paper
+
+Grover, L.K., “A Fast Quantum Mechanical Algorithm for Database Search” – Original Paper
+
+NIST Post-Quantum Cryptography Project – Lab-safe reference & simulation
+
+IEEE / ACM Digital Library – Quantum cryptanalysis research papers
+
+
